@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Manage Roles</div>
+    <div class="card-header">Lista de Perfis</div>
     <div class="card-body">
         @can('create-role')
-            <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New Role</a>
+            <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Adicionar novo Perfil</a>
         @endcan
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                <th scope="col">S#</th>
-                <th scope="col">Name</th>
-                <th scope="col" style="width: 250px;">Action</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col" style="width: 250px;">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,16 +25,16 @@
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
+                            <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Mostrar</a>
 
                             @if ($role->name!='Super Admin')
                                 @can('edit-role')
-                                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit</a>   
+                                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>   
                                 @endcan
 
                                 @can('delete-role')
                                     @if ($role->name!=Auth::user()->hasRole($role->name))
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this role?');"><i class="bi bi-trash"></i> Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this role?');"><i class="bi bi-trash"></i> Excluir</button>
                                     @endif
                                 @endcan
                             @endif
@@ -45,7 +45,7 @@
                 @empty
                     <td colspan="3">
                         <span class="text-danger">
-                            <strong>No Role Found!</strong>
+                            <strong>Nenhum Perfil Encontrado!</strong>
                         </span>
                     </td>
                 @endforelse

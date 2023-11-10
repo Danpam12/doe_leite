@@ -8,10 +8,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-start">
-                    Ponto Coleta Information
+                    Informações do Ponto de Coleta
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
                 </div>
             </div>
             <div class="card-body">
