@@ -39,24 +39,24 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
                                 </li>
                             @endif
                         @else
                             @canany(['create-role', 'edit-role', 'delete-role'])
-                                <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Roles</a></li>
+                                <li><a class="nav-link" href="{{ route('roles.index') }}">Gerenciar Perfil</a></li>
                             @endcanany
                             @canany(['create-user', 'edit-user', 'delete-user'])
-                                <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+                                <li><a class="nav-link" href="{{ route('users.index') }}">Gerenciar Usuário</a></li>
                             @endcanany
                             @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
-                                <li><a class="nav-link" href="{{ route('ponto_coletas.index') }}">Manage Ponto Coleta</a></li>
+                                <li><a class="nav-link" href="{{ route('ponto_coletas.index') }}">Gerenciar Ponto de Coleta</a></li>
                             @endcanany
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -91,8 +91,8 @@
                                 {{ $message }}
                             </div>
                         @endif
-
-                        <h3 class="text-center mt-3 mb-3">ahhhhhhhhhhhhhhhhh - <a href="https://www.allphptricks.com/">AllPHPTricks.com</a></h3>
+                            
+                        <h3 class="text-center mt-3 mb-3">Doe Leite</h3>
                         @yield('content')
                         
                         <!--<div class="row justify-content-center text-center mt-3">

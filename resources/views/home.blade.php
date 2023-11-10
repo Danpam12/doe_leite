@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,21 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                    <h3>{{ __('Login realizado com Sucesso!') }}</h3>
 
-                    {{ __('You are logged in!') }}
-
-                    <p>This is your application dashboard.</p>
+                    <p></p>
                     @canany(['create-role', 'edit-role', 'delete-role'])
                         <a class="btn btn-primary" href="{{ route('roles.index') }}">
-                            <i class="bi bi-person-fill-gear"></i> Manage Roles</a>
+                            <i class="bi bi-person-fill-gear"></i> Gerenciar Perfil</a>
                     @endcanany
                     @canany(['create-user', 'edit-user', 'delete-user'])
                         <a class="btn btn-success" href="{{ route('users.index') }}">
-                            <i class="bi bi-people"></i> Manage Users</a>
+                            <i class="bi bi-people"></i> Gerenciar Usuário</a>
                     @endcanany
                     @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
                         <a class="btn btn-warning" href="{{ route('ponto_coletas.index') }}">
-                            <i class="bi bi-bag"></i> Manage Ponto coleta</a>
+                            <i class="bi bi-bag"></i> Gerenciar Ponto de coleta</a>
                     @endcanany
                     <p>&nbsp;</p>
                 </div>
