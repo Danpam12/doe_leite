@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Lista de Pontos</div>
+<div class="card-header  text-white" style="background-color: #e24ab4">Lista de Pontos</div>
     <div class="card-body">
         @can('create-ponto-coleta')
-            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
+            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-sm my-2"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
         @endcan
         <table class="table table-striped table-bordered">
             <thead>
