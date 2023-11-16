@@ -24,9 +24,16 @@ class RoleSeeder extends Seeder
             'delete-user',
             'create-ponto-coleta',
             'edit-ponto-coleta',
-            'delete-ponto-coleta'
+            'delete-ponto-coleta',
+            'create-agendamento',
+            'edit-agendamento',
+            'delete-agendamento'
         ]);
 
+        
+        
+        
+        
         //$productManager->givePermissionTo([
            // 'create-product',
             //'edit-product',
