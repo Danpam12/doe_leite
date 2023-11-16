@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PontoColetaController;
+use App\Http\Controllers\AgendamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
     'ponto_coletas' => PontoColetaController::class,
+    'agendamentos' => AgendamentoController::class
 ]);

@@ -29,6 +29,10 @@
                         <a class="btn btn-warning" href="{{ route('ponto_coletas.index') }}">
                             <i class="bi bi-bag"></i> Gerenciar Ponto de coleta</a>
                     @endcanany
+                    @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
+                        <a class="btn btn-info" href="{{ route('agendamentos.index') }}">
+                            <i class="bi bi-bag"></i> Gerenciar Agendamentos</a>
+                    @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>

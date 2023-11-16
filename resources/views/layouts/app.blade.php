@@ -58,6 +58,9 @@
                             @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
                                 <li><a class="nav-link" href="{{ route('ponto_coletas.index') }}">Gerenciar Ponto de Coleta</a></li>
                             @endcanany
+                            @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
+                                <li><a class="nav-link" href="{{ route('agendamentos.index') }}">Gerenciar Agendamentos</a></li>
+                            @endcanany
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

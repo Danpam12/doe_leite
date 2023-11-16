@@ -57,7 +57,7 @@ class UserController extends Controller
         $user->assignRole($request->roles);
 
         return redirect()->route('users.index')
-                ->withSuccess('New user is added successfully.');
+                ->withSuccess('Usuário adicionado com sucesso!');
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends Controller
         $user->syncRoles($request->roles);
 
         return redirect()->back()
-                ->withSuccess('User is updated successfully.');
+                ->withSuccess('Usuário atualizado com sucesso!');
     }
 
     /**
@@ -124,6 +124,6 @@ class UserController extends Controller
         $user->syncRoles([]);
         $user->delete();
         return redirect()->route('users.index')
-                ->withSuccess('User is deleted successfully.');
+                ->withSuccess('Usuário deletado com sucesso!');
     }
 }

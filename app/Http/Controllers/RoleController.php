@@ -53,7 +53,7 @@ class RoleController extends Controller
         $role->syncPermissions($permissions);
 
         return redirect()->route('roles.index')
-                ->withSuccess('New role is added successfully.');
+                ->withSuccess('Perfil adicionado com sucesso!');
     }
 
     /**
@@ -105,7 +105,7 @@ class RoleController extends Controller
         $role->syncPermissions($permissions);    
         
         return redirect()->back()
-                ->withSuccess('Perfil Atualizado com Sucesso.');
+                ->withSuccess('Perfil Atualizado com Sucesso!');
     }
 
     /**
@@ -121,7 +121,7 @@ class RoleController extends Controller
         }
         $role->delete();
         return redirect()->route('roles.index')
-                ->withSuccess('Role is deleted successfully.');
+                ->withSuccess('Perfil deletado com sucesso!');
     }
 }
 
