@@ -50,24 +50,32 @@
                                 </li>
                             @endif
                         @else
-                           
-                            <li class="nav-item dropdown" style="padding: 0px;border: 10;border-radius: 10px;background-color: #ffffff; color: black;position: absolute; right: 0;top: 30px;">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                        <li class="nav-item dropdown" style="padding: 0px; border: 10; border-radius: 10px; background-color: #ffffff; color: black; position: absolute; right: 0; top: 30px;">
+    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+        {{ Auth::user()->name }}
+    </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Sair') }}
-                                    </a>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        @canany(['create-role', 'edit-role', 'delete-role'])
+            <a class="dropdown-item" href="{{ route('roles.index') }}">Gerenciar Perfil</a>
+        @endcanany
+        @canany(['create-user', 'edit-user', 'delete-user'])
+            <a class="dropdown-item" href="{{ route('users.index') }}">Gerenciar Usuário</a>
+        @endcanany
+        @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+            <a class="dropdown-item" href="{{ route('ponto_coletas.index') }}">Gerenciar Ponto de Coleta</a>
+        @endcanany
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            {{ __('Sair') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </div>
+</li>
+
                         @endguest
                     </ul>
                 </div>

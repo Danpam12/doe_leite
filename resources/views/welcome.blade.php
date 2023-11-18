@@ -15,7 +15,7 @@
         font-family: 'Figtree', sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url('/img/fundo.jpg'); /* Caminho relativo à pasta 'public' */
+        background-image: url('/img/fundo.jpg'); 
         background-size: cover;
         background-repeat: no-repeat;
         height: 80vh;
@@ -70,10 +70,10 @@
                             
                          </div>
 </div>
-<div style="position: fixed; left: 0;bottom: 0;width: 100%; background-color: #f8f8f8; padding: 0px; text-align: center; ">
+<div style="position: fixed; left: 0;bottom: 0;width: 100%; background-color: e24ab4; padding: 0px; text-align: center; ">
     <div class="flex items-center gap-4">
         <a href="https://github.com/Danpam12/doe_leite" style="color: #e24ab4; display: inline-flex; align-items: center; padding: 5px; "                                              
-           class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black" style="background-color: black">
+           class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black" >
             
             DoeLeite
         </a>
