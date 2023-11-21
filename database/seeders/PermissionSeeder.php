@@ -22,7 +22,10 @@ class PermissionSeeder extends Seeder
             'delete-user',
             'create-ponto-coleta',
             'edit-ponto-coleta',
-            'delete-ponto-coleta'
+            'delete-ponto-coleta',
+            'create-agendamento',
+            'edit-agendamento',
+            'delete-agendamento'
         ];
 
           // // Looping and Inserting Array's Permissions into Permission Table

@@ -44,7 +44,7 @@ class PontoColetaController extends Controller
     {
         Ponto_coleta::create($request->all());
         return redirect()->route('ponto_coletas.index')
-                ->withSuccess('New ponto coleta is added successfully.');
+                ->withSuccess('Ponto de coleta foi adicionado com sucesso!');
     }
 
     /**
@@ -74,7 +74,7 @@ class PontoColetaController extends Controller
     {
         $ponto_coleta->update($request->all());
         return redirect()->back()
-                ->withSuccess('Ponto coleta is updated successfully.');
+                ->withSuccess('Ponto de coleta foi atualizado com sucesso!');
     }
 
     /**
@@ -84,6 +84,6 @@ class PontoColetaController extends Controller
     {
         $ponto_coleta->delete();
         return redirect()->route('ponto_coletas.index')
-                ->withSuccess('Ponto coleta is deleted successfully.');
+                ->withSuccess('Ponto de coleta foi deletado com sucesso!');
     }
 }

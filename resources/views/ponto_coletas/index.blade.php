@@ -31,14 +31,14 @@
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('ponto_coletas.show', $ponto_coleta->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Mostrar</a>
+                            <a href="{{ route('ponto_coletas.show', $ponto_coleta->id) }}" class="btn btn-warning btn-sm mb-2"><i class="bi bi-eye"></i> Mostrar</a>
 
                             @can('edit-ponto-coleta')
-                                <a href="{{ route('ponto_coletas.edit', $ponto_coleta->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
+                                <a href="{{ route('ponto_coletas.edit', $ponto_coleta->id) }}" class="btn btn-primary btn-sm mb-2"><i class="bi bi-pencil-square"></i> Editar</a>
                             @endcan
 
                             @can('delete-ponto-coleta')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Está certo que quer deletar o Ponto de Coleta?');"><i class="bi bi-trash"></i> Excluir</button>
+                                <button type="submit" class="btn btn-danger btn-sm mb-2" onclick="return confirm('Está certo que quer deletar o Ponto de Coleta?');"><i class="bi bi-trash"></i> Excluir</button>
                             @endcan
                         </form>
                     </td>
