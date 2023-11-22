@@ -27,7 +27,10 @@ class RoleSeeder extends Seeder
             'delete-ponto-coleta',
             'create-agendamento',
             'edit-agendamento',
-            'delete-agendamento'
+            'delete-agendamento',
+            'create-cad-doadora',
+            'edit-cad-doadora',
+            'delete-cad-doadora'
         ]);
 
         
