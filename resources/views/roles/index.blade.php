@@ -7,8 +7,8 @@
         @can('create-role')
             <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm my-2" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Perfil</a>
         @endcan
-        <table class="table table-striped table-bordered">
-    <thead class="table-white" style="color: #e24ab4">
+        <table class="table table-striped">
+    <thead>    
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
