@@ -76,20 +76,25 @@
             @endif
 
         </div>
+        
     </div>
+    
     <div
         style="position: fixed; left: 0;bottom: 0;width: 100%; background-color: e24ab4; padding: 0px; text-align: center; ">
-        <div class="flex items-center gap-4">
-            <a href="https://github.com/Danpam12/doe_leite"
-                style="color: #e24ab4; display: inline-flex; align-items: center; padding: 5px; "
-                class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
+        
+          <div  class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+       
+          <div class="container-fluid" style="background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <p style="color: black;margin: 0;">Este site utiliza recursos do <a href="https://www.gov.br" target="_blank">https://www.gov.br</a>.</p>
 
-                DoeLeite
-            </a>
-        </div>
+    <a href="https://github.com/Danpam12/doe_leite"
+       style="color: #e24ab4; display: inline-flex; padding: 0px;"
+       class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
+        DoeLeite
+    </a>
+</div>
+
     </div>
-
-
 
     </div>
 </body>

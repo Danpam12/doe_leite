@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="card">
-<div class="card-header  text-white" style="background-color: #e24ab4">Lista de Usuários</div>
+<div class="card text-white" style="background-color: #e24ab4">Lista de Usuários</div>
     <div class="card-body">
             @can('create-user')
                 <a href="{{ route('users.create') }}" class="btn btn-success btn-sm mb-2"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Usuário</a>
             @endcan
-            <table class="table table-striped">
+            <table class="table table-hover">
     <thead>
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>

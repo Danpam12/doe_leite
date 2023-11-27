@@ -351,7 +351,7 @@
                                     <div class="card-body">
                                         <div class="media d-flex">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
-                                                <img src="img/icon-perfil.png" alt="Ícone" class="icon-img"
+                                                <img src="/img/icon-perfil.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
                                             </div>
                                             <div class="media-body text-right">
