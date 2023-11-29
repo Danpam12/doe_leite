@@ -15,11 +15,9 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data" >
                     @csrf
-
-                    <div class="mb-3 row">
-
+                    
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
                         <div class="col-md-6">
@@ -155,7 +153,7 @@
                             @endif
                         </div>
                     </div>
-
+                    
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
                             <input type="submit" class="btn btn-primary" value="Adicionar Doadora">

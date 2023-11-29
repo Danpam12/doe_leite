@@ -862,7 +862,7 @@
                                     </div>
                                     @canany(['create-user', 'edit-user', 'delete-user'])
 
-                                        <a style="border-width: 20px; text-center;border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
+                                        <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
 
                                             href="{{ route('users.index') }}" class="btn btn-custom">
                                             </i></i> </a>
