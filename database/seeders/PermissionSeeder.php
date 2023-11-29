@@ -25,7 +25,10 @@ class PermissionSeeder extends Seeder
             'delete-ponto-coleta',
             'create-agendamento',
             'edit-agendamento',
-            'delete-agendamento'
+            'delete-agendamento',
+            'create-cad-doadora',
+            'edit-cad-doadora',
+            'delete-cad-doadora'
         ];
 
           // // Looping and Inserting Array's Permissions into Permission Table

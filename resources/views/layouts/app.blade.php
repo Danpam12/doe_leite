@@ -21,13 +21,14 @@
     <div id="app" style="background-color: white;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
-                <img src="/img/logo.jpg" style="height:100px">
+                <img src="//img/logo.jpg" style="height:100px">
                 <main class="py-4">
                     <div class="container">
                         <!-- Botão para mostrar/ocultar links de gerenciamento -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#managementLinks" aria-controls="managementLinks" aria-expanded="false"
                             aria-label="{{ __('Toggle management links') }}" style="background-color: #e24ab4;">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="background-color: #e24ab4;">
                             <span class="navbar-toggler-icon" style="background-color: pink;"></span>
                         </button>
 
@@ -81,6 +82,15 @@
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
                                     </li>
                                 @endif
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ms-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Entrar') }}</a>
+                                </li>
+                                @endif
 
                                 @if (Route::has('register'))
                                     <li class="nav-item">
@@ -95,6 +105,28 @@
                                         {{ Auth::user()->name }}
                                     </a>
 
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        @canany(['create-role', 'edit-role', 'delete-role'])
+                                        <a class="dropdown-item" href="{{ route('roles.index') }}">Gerenciar Perfil</a>
+                                        @endcanany
+                                        @canany(['create-user', 'edit-user', 'delete-user'])
+                                        <a class="dropdown-item" href="{{ route('users.index') }}">Gerenciar Usuário</a>
+                                        @endcanany
+                                        @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+                                        <a class="dropdown-item" href="{{ route('ponto_coletas.index') }}">Gerenciar
+                                            Ponto de Coleta</a>
+                                        @endcanany
+                                        @canany(['create-agendamento', 'edit-agendamento', 'delete-ponto-coleta'])
+                                        <a class="dropdown-item" href="{{ route('agendamentos.index') }}">Gerenciar
+                                            Agendamentos</a>
+                                        @endcanany
+                                        @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
+                                        <a class="dropdown-item" href="{{ route('cad_doadoras.index') }}">Gerenciar Doadoras</a>
+                                        @endcanany
+
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{ __('Sair') }}
+                                </a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -111,6 +143,16 @@
                         </div>
                     </div>
                 </main>
+            </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                        </div>
+                        </li>
+
+                        @endguest
+                        </ul>
+                    </div>
             </div>
         </nav>
 
