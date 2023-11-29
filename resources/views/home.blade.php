@@ -840,9 +840,6 @@
                                             <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Perfil</span>
                                         </div>
                                     </div>
-                                    <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                                        Clique Aqui
-                                    </button>
                                 </div>
                                 @canany(['create-role', 'edit-role', 'delete-role'])
                                         <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px;"
