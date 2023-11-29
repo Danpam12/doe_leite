@@ -44,9 +44,33 @@ class CadDoadoraController extends Controller
      */
     public function store(StoreCad_doadoraRequest $request)
     {
+        $cad_doadora = new Cad_doadora;
+
         Cad_doadora::create($request->all());
         return redirect()->route('cad_doadoras.index')
                 ->withSuccess('Nova doadora adicionada com sucesso!');
+        
+       
+
+        //File Upload
+        if($request->hasFile('file') && $request->file('file')->isValid()) {
+
+            $requestFile = $request->file;
+
+            $extension = $requestFile->extension();
+
+            $fileName = md5($requestFile->file->getClienteOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestFile->move(public_path('img/cad_doadora'), $fileName);
+
+            $cad_doadora->file = $fileName;
+        }
+        
+        $cad_doadora->save();
+
+        return redirect('/')->with('msg', 'criado com sucesso');
+
+        
     }
 
     /**

@@ -11,7 +11,7 @@
                     Informações da Doadora
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('cad_doadora.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
                 </div>
             </div>
             <div class="card-body">
@@ -99,3 +99,4 @@
         </div>
     </div>    
 </div>
+@endsection

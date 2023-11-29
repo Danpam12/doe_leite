@@ -23,7 +23,7 @@
     <div id="app" style="background-color: white;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
-                <img src="img/logo.jpg" style="height:100px">
+                <img src="/img/logo.jpg" style="height:100px">
                 <main class="py-4">
                     <div class="container">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="background-color: #e24ab4;">

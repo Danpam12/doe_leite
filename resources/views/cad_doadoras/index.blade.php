@@ -30,18 +30,18 @@
                 @forelse ($cad_doadoras as $cad_doadora)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $agendamento->nome }}</td>
-                        <td>{{ $agendamento->data_nasc }}</td>
-                        <td>{{ $agendamento->endereco }}</td>
-                        <td>{{ $agendamento->fone }}</td>
-                        <td>{{ $agendamento->email }}</td>
-                        <td>{{ $agendamento->pre_nat }}</td>
-                        <td>{{ $agendamento->data_parto }}</td>
-                        <td>{{ $agendamento->tabagismo }}</td>
-                        <td>{{ $agendamento->etilismo }}</td>
-                        <td>{{ $agendamento->drogas }}</td>
-                        <td>{{ $agendamento->exames }}</td>
-                        <td>{{ $agendamento->file }}</td>
+                        <td>{{ $cad_doadora->nome }}</td>
+                        <td>{{ $cad_doadora->data_nasc }}</td>
+                        <td>{{ $cad_doadora->endereco }}</td>
+                        <td>{{ $cad_doadora->fone }}</td>
+                        <td>{{ $cad_doadora->email }}</td>
+                        <td>{{ $cad_doadora->pre_nat }}</td>
+                        <td>{{ $cad_doadora->data_parto }}</td>
+                        <td>{{ $cad_doadora->tabagismo }}</td>
+                        <td>{{ $cad_doadora->etilismo }}</td>
+                        <td>{{ $cad_doadora->drogas }}</td>
+                        <td>{{ $cad_doadora->exames }}</td>
+                        <td>{{ $cad_doadora->file }}</td>
                         <td>
                             <form action="{{ route('cad_doadoras.destroy', $cad_doadora->id) }}" method="post">
                                 @csrf
