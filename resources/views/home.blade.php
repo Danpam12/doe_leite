@@ -360,8 +360,7 @@
                                         </div>
                                     </div>
                                     @canany(['create-role', 'edit-role', 'delete-role'])
-                                        <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px;"
-                                            href="{{ route('roles.index') }}" class="btn btn-custom">
+                                        <a  href="{{ route('roles.index') }}" class="btn btn-custom">
                                             </i> <img src="img/click.png" style="width: 200px;"></a>
                                     @endcanany
                                 </div>
@@ -387,9 +386,7 @@
                                     
                                         
 
-                                        <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-
-                                            href="{{ route('users.index') }}" class="btn btn-custom">
+                                        <a     href="{{ route('users.index') }}" class="btn btn-custom">
                                             </i></i> <img src="img/click.png" style="width: 200px;"></a>
                                     @endcanany
                                 </div>
@@ -426,7 +423,7 @@
                                     <div class="card-body">
                                         <div class="media d-flex">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
-                                                <img src="img/agenda.png" alt="Ícone" class="icon-img"
+                                                <img src="/img/agenda.png" alt="Ícone" class="icon-img"
                                                     style="width: 130px;">
                                             </div>
                                             <div class="media-body text-right">
@@ -449,9 +446,9 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="media d-flex">
-                                            <div class="align-self-center">
-                                                <img src="img/icon-ponto.png" alt="Ícone" class="icon-img"
-                                                    style="width: 100px">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 12vh;">
+                                                <img src="/img/doadora.jpg" alt="Ícone" class="icon-img"
+                                                    style="width: 100px;">
                                             </div>
                                             <div class="media-body text-right">
                                                 <span>Gerenciar Doadoras</span>
@@ -459,9 +456,9 @@
                                         </div>
                                     </div>
                                     @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
-                                        <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-                                            href="{{ route('cad_doadoras.index') }}" class="btn btn-custom">
-                                            </i></i> </a>
+                                        <a href="{{ route('cad_doadoras.index') }}" class="btn btn-custom">
+                                                     </i></i><img src="img/click.png" style="width: 200px;"> </a>
+</a>
                                     @endcanany
 </div>
                                 </div>
@@ -469,31 +466,7 @@
                         </div>
 
                         
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="media d-flex">
-                                            <div class="align-self-center">
-                                                <img src="img/icon-ponto.png" alt="Ícone" class="icon-img"
-                                                    style="width: 100px">
-                                            </div>
-                                            <div class="media-body text-right">
-                                                <span>Gerenciar Doadoras</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
-                                        <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-                                            href="{{ route('cad_doadoras.index') }}" class="btn btn-custom">
-                                            </i></i> </a>
-                                    @endcanany
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                      
 
                 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
