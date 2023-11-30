@@ -33,7 +33,7 @@
                     <div class="mb-3 row">
                         <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start">Nascimento</label>
                         <div class="col-md-6">
-                          <input type="date" class="form-control @error('data_nasc') is-invalid @enderror" id="data_nasc" name="data_nasc" value="{{ $cad_doadora->data_nasc) }}">
+                          <input type="date" class="form-control @error('data_nasc') is-invalid @enderror" id="data_nasc" name="data_nasc" value="{{ $cad_doadora->data_nasc }}">
                             @if ($errors->has('data_nasc'))
                                 <span class="text-danger">{{ $errors->first('data_nasc') }}</span>
                             @endif
@@ -147,11 +147,11 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <!--<label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>-->
+                        <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>
                         <div class="col-md-6">
                           <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
                             @if ($errors->has('file'))
-                                <span class="text-danger">{{ $errors->first('file') }}</span>
+                                <span class="text-danger">{{ $files }}</span>
                             @endif
                         </div>
                     </div>
