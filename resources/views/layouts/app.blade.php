@@ -25,15 +25,55 @@
             <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
                 <img src="/img/logo.jpg" style="height:100px">
                 <main class="py-4">
+                <div class="navbar-nav ms-auto" >
+                            @auth
+                                @canany(['create-role', 'edit-role', 'delete-role'])
+                                    <a class="nav-link" href="{{ route('roles.index') }}" style="margin-right: 50px;padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e24ab4; 
+    color: #ffffff;" >Gerenciar Perfil</a>
+                                @endcanany
+                                @canany(['create-user', 'edit-user', 'delete-user'])
+                                    <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 50px;padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e24ab4; 
+    color: #ffffff;">Gerenciar Usuário</a>
+                                @endcanany
+                                @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+                                    <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 50px;padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e24ab4; 
+    color: #ffffff;">Gerenciar Ponto de Coleta</a>
+                                @endcanany
+                                @canany(['create-agendamento', 'edit-agendamento', 'delete-ponto-coleta'])
+                                    <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 50px;padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e24ab4; 
+    color: #ffffff;">Gerenciar Agendamentos</a>
+                                @endcanany
+                                @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
+                                    <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right: 70px;padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #e24ab4; 
+    color: #ffffff;">Gerenciar Doadoras</a>
+                                @endcanany
+                            @endauth
+                        </div>
                     <div class="container">
+                       <!-- Botão para mostrar/ocultar links de gerenciamento -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#managementLinks" aria-controls="managementLinks" aria-expanded="false"
+                            aria-label="{{ __('Toggle management links') }}" style="background-color: #e24ab4;">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="background-color: #e24ab4;">
                             <span class="navbar-toggler-icon" style="background-color: pink;"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav me-auto">
-
+                      
                             </ul>
 
                             <!-- Right Side Of Navbar -->
@@ -57,24 +97,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        @canany(['create-role', 'edit-role', 'delete-role'])
-                                        <a class="dropdown-item" href="{{ route('roles.index') }}">Gerenciar Perfil</a>
-                                        @endcanany
-                                        @canany(['create-user', 'edit-user', 'delete-user'])
-                                        <a class="dropdown-item" href="{{ route('users.index') }}">Gerenciar Usuário</a>
-                                        @endcanany
-                                        @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
-                                        <a class="dropdown-item" href="{{ route('ponto_coletas.index') }}">Gerenciar
-                                            Ponto de Coleta</a>
-                                        @endcanany
-                                        @canany(['create-agendamento', 'edit-agendamento', 'delete-ponto-coleta'])
-                                        <a class="dropdown-item" href="{{ route('agendamentos.index') }}">Gerenciar
-                                            Agendamentos</a>
-                                        @endcanany
-                                        @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
-                                        <a class="dropdown-item" href="{{ route('cad_doadoras.index') }}">Gerenciar Doadoras</a>
-                                        @endcanany
+                                  
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     {{ __('Sair') }}

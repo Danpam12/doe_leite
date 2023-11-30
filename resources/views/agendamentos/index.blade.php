@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Lista de Agendamentos</div>
+    <div class="card  text-white" style="background-color: #e24ab4">Lista de Agendamentos</div>
     <div class="card-body">
         @can('create-agendamento')
-            <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
+            <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-sm my-2"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
         @endcan
-        <table class="table table-striped table-bordered">
+       <table class="table table-hover">
+
             <thead>
                 <tr>
                     <th scope="col">S#</th>

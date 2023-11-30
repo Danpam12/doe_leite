@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Lista de Doadoras</div>
+    <div class="card text-white" style="background-color: #e24ab4">Lista de Doadoras</div>
     <div class="card-body">
         @can('create-cad-doadora')
-            <a href="{{ route('cad_doadoras.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Adicionar nova doadora</a>
+            <a href="{{ route('cad_doadoras.create') }}" class="btn btn-success btn-sm my-2"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar nova doadora</a>
         @endcan
         <table class="table table-striped table-bordered">
             <thead>
