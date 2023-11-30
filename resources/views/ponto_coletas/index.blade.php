@@ -1,50 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-<div class="card-header  text-white" style="background-color: #e24ab4">Lista de Pontos</div>
-    <div class="card-body">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<div class="card p-1 m-2 md:m-8">
+<div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Pontos</div>
+    <div class="card-body rounded-xl">
         @can('create-ponto-coleta')
-            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-sm my-2"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
+            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-xl my-2 font-semibold text-slate-900"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
         @endcan
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
             <thead>
                 <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Fone</th>
-                <th scope="col">Endereço</th>
-                <th scope="col">Ação</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">Email</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">Fone</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">Endereço</th>
+                <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($ponto_coletas as $ponto_coleta)
-                <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $ponto_coleta->nome }}</td>
-                    <td>{{ $ponto_coleta->email }}</td>
-                    <td>{{ $ponto_coleta->fone }}</td>
-                    <td>{{ $ponto_coleta->endereco }}</td>
-                    <td>
+                <tr class="border border-slate-600 rounded-xl">
+                    <th scope="row" class="border border-slate-600 rounded-xl">{{ $loop->iteration }}</th>
+                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->nome }}</td>
+                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->email }}</td>
+                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->fone }}</td>
+                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->endereco }}</td>
+                    <td class="border border-slate-600 rounded-xl">
                         <form action="{{ route('ponto_coletas.destroy', $ponto_coleta->id) }}" method="post">
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('ponto_coletas.show', $ponto_coleta->id) }}" class="btn btn-warning btn-sm mb-2"><i class="bi bi-eye"></i> Mostrar</a>
+                            <a href="{{ route('ponto_coletas.show', $ponto_coleta->id) }}" class="btn btn-warning btn-xl mb-2 rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
 
                             @can('edit-ponto-coleta')
-                                <a href="{{ route('ponto_coletas.edit', $ponto_coleta->id) }}" class="btn btn-primary btn-sm mb-2"><i class="bi bi-pencil-square"></i> Editar</a>
+                                <a href="{{ route('ponto_coletas.edit', $ponto_coleta->id) }}" class="btn btn-primary btn-xl mb-2 rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                             @endcan
 
                             @can('delete-ponto-coleta')
-                                <button type="submit" class="btn btn-danger btn-sm mb-2" onclick="return confirm('Está certo que quer deletar o Ponto de Coleta?');"><i class="bi bi-trash"></i> Excluir</button>
+                                <button type="submit" class="btn btn-danger btn-xl mb-2 rounded-xl p-1 m-1" onclick="return confirm('Está certo que quer deletar o Ponto de Coleta?');"><i class="bi bi-trash"></i> Excluir</button>
                             @endcan
                         </form>
                     </td>
                 </tr>
                 @empty
-                    <td colspan="6">
+                    <td colspan="6" class="border border-slate-600 rounded-xl">
                         <span class="text-danger">
                             <strong>Nenhum Ponto de Coleta foi Encontrado!</strong>
                         </span>

@@ -845,7 +845,7 @@
                                         <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px;"
 
                                         href="{{ route('roles.index') }}" class="btn btn-custom">
-                                        </i></i> </a>
+                                        </i></i></a>
                                         @endcanany
                                 </div>
                             </div>
@@ -856,7 +856,6 @@
                                 <div class="card-content">
                                     <div class="card-body rounded-lg">
                                         <div class="media d-flex">
-
                                             <div class="align-self-center">
                                                 <img src="img/icon-usuario.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
@@ -865,9 +864,6 @@
                                                     <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Usuário</span>
                                             </div>
                                         </div>
-                                        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                                            Clique Aqui
-                                        </button>
                                     </div>
                                     @canany(['create-user', 'edit-user', 'delete-user'])
 
@@ -893,9 +889,6 @@
                                                 <span class="text-lg font-semibold mb-1. bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Ponto de Coleta</span>
                                             </div>
                                         </div>
-                                        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                                            Clique Aqui
-                                        </button>
                                     </div>
                                         @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
                                         <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
@@ -919,9 +912,6 @@
                                                     <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Agendamentos</span>
                                                 </div>
                                             </div>
-                                            <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                                                Clique Aqui
-                                            </button>
                                         </div>
                                         @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
                                         <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
@@ -947,9 +937,6 @@
                                                     Gerenciar Doadoras</span>
                                             </div>
                                         </div>
-                                        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                                            Clique Aqui
-                                        </button>
                                     </div>
                                     @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
                                     <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
