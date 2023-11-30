@@ -11,7 +11,7 @@
 
         <table class="table table-striped table-bordered table-auto border-separate border border-slate-500 rounded-xl md:table-auto">
             <thead>
-                <tr>
+                <tr class="border border-slate-600 rounded-xl"  >
                     <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Nascimento</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Endereço</th>
