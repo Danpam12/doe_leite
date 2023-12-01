@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PontoColetaController;
 use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\CadDoadoraController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------

@@ -8,25 +8,24 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-start">
-                    Adicionar Nova Doadora
+                    Editar Nova Doadora
                 </div>
                 <div class="float-end">
                     <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('cad_doadoras.store', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-
-                    <div class="mb-3 row">
+                    
 
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('nome') is-invalid @enderror" id="name" name="name" value="{{ $cad_doadora->nome }}">
-                            @if ($errors->has('nome'))
-                                <span class="text-danger">{{ $errors->first('nome') }}</span>
-                            @endif
+                          <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ $cad_doadora->nome }}">
+                            @error('nome')
+                                <span class="text-danger">{{ 'nome' }}</span>
+                            @enderror
                         </div>
                     </div>
 
@@ -34,9 +33,9 @@
                         <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start">Nascimento</label>
                         <div class="col-md-6">
                           <input type="date" class="form-control @error('data_nasc') is-invalid @enderror" id="data_nasc" name="data_nasc" value="{{ $cad_doadora->data_nasc }}">
-                            @if ($errors->has('data_nasc'))
-                                <span class="text-danger">{{ $errors->first('data_nasc') }}</span>
-                            @endif
+                            @error('data_nasc')
+                                <span class="text-danger">{{ 'data_nasc' }}</span>
+                            @enderror
                         </div>
                     </div>
 
@@ -44,7 +43,7 @@
                         <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
                         <div class="col-md-6">
                           <input type="text" class="form-control @error(endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
-                            @if ($errors->has('endereco'))
+                            @error('endereco')
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
                             @endif
                         </div>
@@ -87,9 +86,9 @@
                         <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start">Data do Parto</label>
                         <div class="col-md-6">
                           <input type="date" class="form-control @error('data_parto') is-invalid @enderror" id="data_parto" name="data_parto" value="{{ $cad_doadora->data_parto }}">
-                            @if ($errors->has('data_parto'))
+                            @error('data_parto')
                                 <span class="text-danger">{{ $errors->first('data_parto') }}</span>
-                            @endif
+                            @enderror
                         </div>
                     </div>
 
@@ -149,16 +148,18 @@
                     <div class="mb-3 row">
                         <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>
                         <div class="col-md-6">
-                          <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
-                            @if ($errors->has('file'))
-                                <span class="text-danger">{{ $files }}</span>
-                            @endif
+                        <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
+                        <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
+                          
+                            @error('file')
+                                <span class="text-danger">{{ $file }}</span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
-                            <input type="submit" class="btn btn-primary" value="Adicionar Doadora">
+                            <input type="submit" class="btn btn-primary" value="Atualizar Doadora">
                         </div>
                     </div>
                     

@@ -73,7 +73,7 @@ class PontoColetaController extends Controller
     public function update(UpdatePonto_coletaRequest $request, Ponto_coleta $ponto_coleta): RedirectResponse
     {
         $ponto_coleta->update($request->all());
-        return redirect()->back()
+        return redirect()->route('ponto_coletas.index')
                 ->withSuccess('Ponto de coleta foi atualizado com sucesso!');
     }
 
