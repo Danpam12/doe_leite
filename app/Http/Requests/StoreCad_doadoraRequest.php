@@ -33,7 +33,7 @@ class StoreCad_doadoraRequest extends FormRequest
             'tabagismo'=> 'required|in:sim,nao',
             'etilismo'=> 'required|in:sim,nao',
             'drogas'=> 'required|in:sim,nao',
-            'file'=>'required|string'
+            'file' => 'required'
         ];
     }
 }

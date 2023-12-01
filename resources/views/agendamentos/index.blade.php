@@ -9,7 +9,7 @@
             <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-xl my-2 font-semibold text-slate-900"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
         @endcan
         <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
-            <thead class="table-white">
+            
                 <tr>
                     <th scope="col" class="border border-slate-600 rounded-xl">S#</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Ponto de Coleta</th>

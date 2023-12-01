@@ -5,11 +5,14 @@
 <div class="card p-1 m-2 md:m-8">
 <div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Pontos</div>
     <div class="card-body rounded-xl">
+
         @can('create-ponto-coleta')
             <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-xl my-2 font-semibold text-slate-900"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
         @endcan
+
         <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
             <thead>
+
                 <tr>
                 <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
                 <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>

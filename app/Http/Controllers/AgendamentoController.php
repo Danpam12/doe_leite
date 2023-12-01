@@ -82,7 +82,7 @@ class AgendamentoController extends Controller
     public function update(UpdateAgendamentoRequest $request, Agendamento $agendamento): RedirectResponse
     {
         $agendamento->update($request->all());
-        return redirect()->back()
+        return redirect()->route('agendamentos.index')
                 ->withSuccess('Agendamento atualizado com sucesso!');
     }
 

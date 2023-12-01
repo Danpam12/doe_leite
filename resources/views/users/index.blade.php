@@ -5,9 +5,11 @@
 <div class="card p-1 m-2 md:m-8" >
 <div class="card-header text-white rounded-xl" style="background-color: #e24ab4">Lista de Usuários</div>
     <div class="card-body rounded-xl ">
+
             @can('create-user')
                 <a href="{{ route('users.create') }}" class="btn btn-success btn-xl font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Usuário</a>
             @endcan
+
             <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
                 <thead class="table-white" style="color: #e24ab4">
                     <tr>
