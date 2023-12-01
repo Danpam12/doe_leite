@@ -8,8 +8,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
     <style>
         body {
@@ -71,19 +71,30 @@
             @endif
 
         </div>
+        
     </div>
-    <div style="position: fixed; left: 0;bottom: 0;width: 100%; background-color: e24ab4; padding: 0px; text-align: center; ">
-        <div class="flex items-center gap-4">
-            <a href="https://github.com/Danpam12/doe_leite" style="color: #e24ab4; display: inline-flex; align-items: center; padding: 5px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
-
-                DoeLeite
-            </a>
+    
+    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: white; padding: 0px; text-align: center; z-index: 2;">
+    <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 10px; text-align: center; z-index: 1;">
+            <p style="color: black; margin: 0;">
+                Este site utiliza recursos do <a href="https://www.gov.br" target="_blank" style="cursor: pointer; color: black;">https://www.gov.br/</a>
+            </p>
         </div>
     </div>
+</div>
 
-
-
+<div style="position: fixed; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 10px; text-align: center; z-index: 2;">
+    <div class="flex items-center gap-4">
+        <a href="https://github.com/Danpam12/doe_leite" style="margin-right: 800px; color: #e24ab4; display: inline-flex; align-items: center; padding: 2px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
+            DoeLeite
+        </a>
     </div>
+</div>
+
+
+
+
 </body>
 
 </html>
