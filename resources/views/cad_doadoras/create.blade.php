@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data" >
+                <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="mb-3 row">
@@ -32,9 +32,9 @@
                         <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start">Nascimento</label>
                         <div class="col-md-6">
                           <input type="date" class="form-control @error('data_nasc') is-invalid @enderror" id="data_nasc" name="data_nasc" value="{{ old('data_nasc') }}">
-                            @if ($errors->has('data_nasc'))
+                          @if($errors->has('data_nasc'))
                                 <span class="text-danger">{{ $errors->first('data_nasc') }}</span>
-                            @endif
+                          @endif
                         </div>
                     </div>
 
@@ -42,9 +42,9 @@
                         <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
                         <div class="col-md-6">
                           <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ old('endereco') }}">
-                            @if ($errors->has('endereco'))
+                          @if($errors->has('endereco'))
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
-                            @endif
+                          @endif
                         </div>
                     </div>
 
@@ -52,9 +52,9 @@
                         <label for="fone" class="col-md-4 col-form-label text-md-end text-start">Fone</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control @error('fone') is-invalid @enderror" id="fone" name="fone" value="{{ old('fone') }}">
-                            @error('fone')
+                            @if($errors->has('fone'))
                                 <span class="text-danger">{{ $errors->first('fone') }}</span>
-                            @enderror
+                            @endif
                         </div>
                     </div>
 
@@ -62,9 +62,9 @@
                         <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
-                            @error('email')
-                                <span class="text-danger">{{ $email }}</span>
-                            @enderror
+                            @if($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -75,9 +75,9 @@
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
                             </select>
-                            @error('pre_nat')
-                                <span class="text-danger">{{ $pre_nat }}</span>
-                            @enderror
+                            @if($errors->has('pre_nat'))
+                                <span class="text-danger">{{ $errors->first('pre_nat') }}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
                         <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start">Data do Parto</label>
                         <div class="col-md-6">
                           <input type="date" class="form-control @error('data_parto') is-invalid @enderror" id="data_parto" name="data_parto" value="{{ old('data_parto') }}">
-                            @if ($errors->has('data_parto'))
+                            @if($errors->has('data_parto'))
                                 <span class="text-danger">{{ $errors->first('data_parto') }}</span>
                             @endif
                         </div>
@@ -98,9 +98,9 @@
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
                             </select>
-                            @error('tabagismo')
-                                <span class="text-danger">{{ $tabagismo}}</span>
-                            @enderror
+                            @if($errors->has('tabagismo'))
+                                <span class="text-danger">{{ $errors->first('tabagismo')}}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -111,9 +111,9 @@
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
                             </select>
-                            @error('etilismo')
-                                <span class="text-danger">{{ $etilismo}}</span>
-                            @enderror
+                            @if($errors->has('etilismo'))
+                                <span class="text-danger">{{ $errors->first('etilismo') }}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -124,8 +124,8 @@
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
                             </select>
-                            @error('drogas')
-                                <span class="text-danger">{{ $drogas}}</span>
+                            @if($errors->has('drogas'))
+                                <span class="text-danger">{{ $errors->first('drogas')}}</span>
                             @enderror
                         </div>
                     </div>
@@ -138,9 +138,9 @@
                                 <option value="hbsag">hbsag</option>
                                 <option value="hiv">hiv</option>
                             </select>
-                            @error('exames')
-                                <span class="text-danger">{{ $exames}}</span>
-                            @enderror
+                            @if($errors->has('exames'))
+                                <span class="text-danger">{{ $errors->first('exames')}}</span>
+                            @endif
                         </div>
                     </div>
 
@@ -148,7 +148,7 @@
                         <label for="file" class="col-md-4 col-form-label text-md-end text-start"></label>
                         <div class="col-md-6">
                           <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ old('file') }}">
-                            @if ($errors->has('file'))
+                            @if($errors->has('file'))
                                 <span class="text-danger">{{ $errors->first('file') }}</span>
                             @endif
                         </div>
