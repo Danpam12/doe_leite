@@ -19,7 +19,7 @@
                     @csrf
                     @method("PUT")
 
-                    
+
                     <div class="mb-3 row">
                         <!-- Campo de seleção para o ponto de coleta -->
                         <label for="ponto_coleta_id" class="col-md-4 col-form-label text-md-end text-start">Ponto de Coleta</label>
@@ -125,11 +125,11 @@
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Atualizar">
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection
