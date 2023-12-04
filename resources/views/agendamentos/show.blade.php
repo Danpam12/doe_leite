@@ -78,8 +78,19 @@
                     </div>
                 </div>
 
-                <!-- Adicionar mais campos conforme necessário -->
+                <div class="row">
+                    <label for="quantidade" class="col-md-4 col-form-label text-md-end text-start"><strong>Quantidade:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $agendamento->quantidade }} <strong>ml</strong>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <label for="status" class="col-md-4 col-form-label text-md-end text-start"><strong>Status:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $agendamento->status }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>    

@@ -24,13 +24,15 @@ class UpdateAgendamentoRequest extends FormRequest
         return [
             'ponto_coleta_id' => 'required|exists:ponto_coletas,id',
             'data' => 'required|date',
-            'hora' => 'required|date_format:H:i',
-            'tipo_coleta' => 'required|in:domicilio,presencial',
+            'hora' => 'required',
+            'tipo_coleta' => 'required|in:domicilio,presencial-coleta,presencial-entrega',
             'nome' => 'required|string',
             'cpf' => ['required', 'string', 'max:14', 'min:11', 'regex:/^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}$/'],
             'telefone' => 'required|string',
             'email' => 'required|email',
             'endereco' => 'required|string',
+            'quantidade' => 'integer|min:1|between:1,10000',    
+            'status' => 'required|in:Pendente,Aceito,Cancelado,Concluido',
         ];
     }
 }

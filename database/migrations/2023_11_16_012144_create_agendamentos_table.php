@@ -17,12 +17,14 @@ return new class extends Migration
             $table->foreign('ponto_coleta_id')->references('id')->on('ponto_coletas');
             $table->date('data');
             $table->time('hora');
-            $table->enum('tipo_coleta', ['domicilio', 'presencial']);
+            $table->enum('tipo_coleta', ['domicilio', 'presencial-coleta', 'presencial-entrega']);
             $table->string('nome');
             $table->string('cpf')->unique();
             $table->string('telefone');
             $table->string('email')->unique();
             $table->string('endereco');
+            $table->integer('quantidade')->nullable();
+            $table->enum('status', ['Pendente', 'Aceito', 'Cancelado', 'Concluido'])->default('Pendente');
             $table->timestamps();
         });
     }
