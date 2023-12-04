@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cad_doadora;
+
 use App\Http\Requests\StoreCad_doadoraRequest;
 use App\Http\Requests\UpdateCad_doadoraRequest;
+use App\Models\Cad_doadora;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
 class CadDoadoraController extends Controller
 {
-
 
     public function __construct()
     {
@@ -23,7 +23,6 @@ class CadDoadoraController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
     public function index()
     {
         return view('cad_doadoras.index', [
@@ -42,18 +41,18 @@ class CadDoadoraController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCad_doadoraRequest $request)
+    public function store(StoreCad_doadoraRequest $request): RedirectResponse
     {
-        $cad_doadora = new Cad_doadora;
+        $cad_doadora = new cad_doadora;
 
         Cad_doadora::create($request->all());
         return redirect()->route('cad_doadoras.index')
-                ->withSuccess('Nova doadora adicionada com sucesso!');
-        
-       
+                ->withSuccess(' Doadora foi adicionada com sucesso!');
 
-        //File Upload
+
+                //File Upload
         if($request->hasFile('file') && $request->file('file')->isValid()) {
+            
 
             $requestFile = $request->file;
 
@@ -61,14 +60,14 @@ class CadDoadoraController extends Controller
 
             $fileName = md5($requestFile->file->getClienteOriginalName() . strtotime("now")) . "." . $extension;
 
-            $requestFile->move(public_path('img/cad_doadora'), $fileName);
+            $requestFile->move(public_path('storage'), $fileName);
 
             $cad_doadora->file = $fileName;
-        }
         
-        $cad_doadora->save();
+        }
+            $cad_doadora->save();
 
-        return redirect('/')->with('msg', 'criado com sucesso');
+            return redirect()->route('cad_doadoras.index')->with('msg', 'criado com sucesso');
 
         
     }
@@ -76,7 +75,7 @@ class CadDoadoraController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cad_doadora $cad_doadora)
+    public function show(Cad_doadora $cad_doadora): View
     {
         return view('cad_doadoras.show', [
             'cad_doadora' => $cad_doadora
@@ -96,20 +95,39 @@ class CadDoadoraController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCad_doadoraRequest $request, Cad_doadora $cad_doadora)
+    public function update(UpdateCad_doadoraRequest $request, Cad_doadora $cad_doadora): RedirectResponse
     {
         $cad_doadora->update($request->all());
-        return redirect()->back()
-            ->withSuccess('Doadora atualizada com sucesso!');
+        return redirect()->route('cad_doadoras.index')
+                ->withSuccess('Doadora foi atualizada com sucesso!');
+
+
+                //Update file
+
+            if ($request->hasFile('file') && $request->file('file')->isValid()) {
+                // Verifica se o arquivo existente precisa ser excluído
+                if ($cad_doadora->file && file_exists(public_path('storage/' . $cad_doadora->file))) {
+                    unlink(public_path('storage/' . $cad_doadora->file));
+                }
+
+                // Processa e armazena o novo arquivo
+                $requestFile = $request->file;
+                $extension = $requestFile->extension();
+                $fileName = md5($requestFile->file->getClienteOriginalName() . strtotime("now")) . "." . $extension;
+                $requestFile->move(public_path('storage'), $fileName);
+
+                // Atualiza o modelo com o novo nome do arquivo
+                $cad_doadora->file = $fileName;
+            }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cad_doadora $cad_doadora)
+    public function destroy(Cad_doadora $cad_doadora): RedirectResponse
     {
         $cad_doadora->delete();
         return redirect()->route('cad_doadoras.index')
-                ->withSuccess('Doadora excluída com sucesso!');
+                ->withSuccess('Doadora foi deletada com sucesso!');
     }
 }

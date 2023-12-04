@@ -19,6 +19,8 @@ class Agendamento extends Model
         'telefone',
         'email',
         'endereco',
+        'quantidade',
+        'status'
     ];
 
     public function pontoColeta()

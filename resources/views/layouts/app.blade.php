@@ -16,7 +16,9 @@
     <div id="app" style="background-color: white;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
-                <img src="/img/logo.jpg" style="height:100px">
+                <a href="{{route('home')}}">
+                    <img src="/img/logo.jpg" style="height:100px">
+                </a>
                 <main class="py-4">
                     <div class="navbar-nav ms-auto">
                         @auth

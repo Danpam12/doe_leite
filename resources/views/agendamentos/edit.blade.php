@@ -19,7 +19,7 @@
                     @csrf
                     @method("PUT")
 
-                    
+
                     <div class="mb-3 row">
                         <!-- Campo de seleção para o ponto de coleta -->
                         <label for="ponto_coleta_id" class="col-md-4 col-form-label text-md-end text-start">Ponto de Coleta</label>
@@ -49,7 +49,32 @@
                     <div class="mb-3 row">
                         <label for="hora" class="col-md-4 col-form-label text-md-end text-start">Hora</label>
                         <div class="col-md-6">
-                            <input type="time" class="form-control @error('hora') is-invalid @enderror" id="hora" name="hora" value="{{ $agendamento->hora }}">
+                            <select class="form-select @error('hora') is-invalid @enderror" id="hora" name="hora">
+                                <option value="{{$agendamento->hora}}">{{$agendamento->hora}}</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                            </select>
                             @error('hora')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -61,7 +86,8 @@
                         <div class="col-md-6">
                             <select class="form-control @error('tipo_coleta') is-invalid @enderror" id="tipo_coleta" name="tipo_coleta">
                                 <option value="domicilio" {{ $agendamento->tipo_coleta == 'domicilio' ? 'selected' : '' }}>Domicílio</option>
-                                <option value="presencial" {{ $agendamento->tipo_coleta == 'presencial' ? 'selected' : '' }}>Presencial</option>
+                                <option value="presencial-coleta" {{ $agendamento->tipo_coleta == 'presencial-coleta' ? 'selected' : '' }}>Presencial - Coleta</option>
+                                <option value="presencial-entrega" {{ $agendamento->tipo_coleta == 'presencial-entrega' ? 'selected' : '' }}>Presencial - Entrega</option>
                             </select>
                             @error('tipo_coleta')
                                 <span class="text-danger">{{ $message }}</span>
@@ -120,16 +146,41 @@
                             @enderror
                         </div>
                     </div>
-                    <!-- Adicione os outros campos de edição conforme necessário (tipo_coleta, nome, cpf, telefone, email, endereco) -->
+                    @can('create-role')
+                    <div class="mb-3 row">
+                        <label for="quantidade" class="col-md-4 col-form-label text-md-end text-start">Quantidade</label>
+                        <div class="col-md-6">
+                            <input type="number" name="quantidade" class="form-control" @error('quantidade') is-invalid @enderror id="quantidade"  value="{{ $agendamento->quantidade }}">
+                            @error('quantidade')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
 
+                    <div class="mb-3 row">
+                        <label for="status" class="col-md-4 col-form-label text-md-end text-start">Status</label>
+                        <div class="col-md-6">
+                            <select class="form-control @error('status') is-invalid @enderror" id="status" name="status">
+                                <option value="Pendente" {{ $agendamento->status == 'Pendente' ? 'selected' : '' }}>Pendente</option>
+                                <option value="Aceito" {{ $agendamento->status == 'Aceito' ? 'selected' : '' }}>Aceito</option>
+                                <option value="Cancelado" {{ $agendamento->status == 'Cancelado' ? 'selected' : '' }}>Cancelado</option>
+                                <option value="Concluido" {{ $agendamento->status == 'Concluido' ? 'selected' : '' }}>Concluido</option>
+                            </select>
+                            @error('status')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    @endcan
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Atualizar">
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection

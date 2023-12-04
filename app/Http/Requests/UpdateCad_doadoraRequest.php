@@ -22,7 +22,7 @@ class UpdateCad_doadoraRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome'=> 'required|string|max:250',
+            'nome'=> 'string|max:250',
             'data_nasc'=> 'required|date',
             'endereco'=>'required|string',
             'fone'=>'required|string',
@@ -33,7 +33,7 @@ class UpdateCad_doadoraRequest extends FormRequest
             'tabagismo'=> 'required|in:sim,nao',
             'etilismo'=> 'required|in:sim,nao',
             'drogas'=> 'required|in:sim,nao',
-            'file'=>'required|string'
+            'file' => 'required'
         ];
     }
 }

@@ -21,6 +21,7 @@ class Cad_doadora extends Model
             'tabagismo',
             'etilismo',
             'drogas',
-            'file',
+            'file'
+            
     ];
 }
