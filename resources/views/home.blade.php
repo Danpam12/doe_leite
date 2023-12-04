@@ -329,24 +329,34 @@
     }
 
     @media (min-width: 1024px) {
-        .lg\:gap-8 {
+        .lg\:gap-10{
             gap: 2rem
         }
 
-        .lg\:p-8 {
+        .lg\:p-10 {
             padding: 2rem
         }
+
+   
     }
+    .grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    
+    
+</style>
+
 </style>
 @section('content')
-    <div class="container">
+<div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="grey-bg container-fluid">
-
-                    <div class="row">
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
+                <div class="container-fluid">
+                    <div class="row grid-cols-5 gap-20 lg:gap-10">
+                        
+                    <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="media d-flex">
@@ -355,20 +365,19 @@
                                                     style="width: 100px">
                                             </div>
                                             <div class="media-body text-right">
-                                                <span>Gerenciar Perfil</span>
                                             </div>
                                         </div>
                                     </div>
                                     @canany(['create-role', 'edit-role', 'delete-role'])
-                                        <a  href="{{ route('roles.index') }}" class="btn btn-custom">
-                                            </i> <img src="img/click.png" style="width: 200px;"></a>
+                                        <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie seu perfil</button> </a>
                                     @endcanany
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
+                    
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="media d-flex">
@@ -378,7 +387,6 @@
                                                     style="width: 100px">
                                             </div>
                                             <div class="media-body text-right">
-                                                <span> Gerenciar Usuário</span>
                                             </div>
                                         </div>
                                     </div>
@@ -386,89 +394,86 @@
                                     
                                         
 
-                                        <a     href="{{ route('users.index') }}" class="btn btn-custom">
-                                            </i></i> <img src="img/click.png" style="width: 200px;"></a>
+                                        <a     href="{{ route('users.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie usuário </button> </a>
                                     @endcanany
                                 </div>
                             </div>
 
                         </div>
-
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
+                      
+                        <div class="col-md-2  mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="media d-flex">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="img/localizacao.png" alt="Ícone" class="icon-img"
-                                                    style="width: 110px">
+                                                    style="width: 100px">
                                             </div>
-                                            <div class="media-body text-right color-black; font-weight: bold;border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; ">
-                                                <span>Gerenciar Ponto de Coleta</span>
+                                            <div class="media-body text-right color-white; font-weight: bold;border-width: 10px; border-style: solid; border-color: #e24ab4; border-radius: 8px; ">
                                             </div>
                                         </div>
                                     </div>
                                     @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
 
-                                    <a  href="{{ route('ponto_coletas.index') }}" class="btn btn-custom">
-                                            </i></i><img src="img/click.png" style="width: 200px;  "></a>
+                                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7); ">
+    <button type="button" class="btn btn-default">Gerencie seu Ponto</button>
+</a>
+
+
                                     @endcanany
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
+                       
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="media d-flex">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/agenda.png" alt="Ícone" class="icon-img"
-                                                    style="width: 130px;">
-                                            </div>
+                                                    style="width: 100px;">
+                                   </div>
                                             <div class="media-body text-right">
-                                                <span>Gerenciar Agendamentos</span>
                                             </div>
                                         </div>
                                     </div>
                                     @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
-                                    <a href="{{ route('agendamentos.index') }}" class="btn btn-custom">
-                                            </i></i><img src="img/click.png" style="width: 200px;"> </a>
+                                    <a href="{{ route('agendamentos.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                            </i></i> <button type="button" class="btn btn-default"> Gerencie seu agendamento </button> </a>
                                     @endcanany
 </div>
                                 </div>
                             </div>
-                        </div>
-
                         
-                        <div class="col-xl-3 col-sm-6 col-12">
-                            <div class="card">
+                        
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <div class="media d-flex">
-                                        <div style="display: flex; justify-content: center; align-items: center; height: 12vh;">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/doadora.jpg" alt="Ícone" class="icon-img"
                                                     style="width: 100px;">
                                             </div>
-                                            <div class="media-body text-right">
-                                                <span>Gerenciar Doadoras</span>
+                                            <div class="media-body text-center">
                                             </div>
                                         </div>
                                     </div>
                                     @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
-                                        <a href="{{ route('cad_doadoras.index') }}" class="btn btn-custom">
-                                                     </i></i><img src="img/click.png" style="width: 200px;"> </a>
-</a>
+                                        <a href="{{ route('cad_doadoras.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                    </i></i> <button type="button" class="btn btn-default"> Gerencie Doadora </button> </a>
                                     @endcanany
 </div>
                                 </div>
                             </div>
                         </div>
-
+</div>
                         
                       
 
-                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
                     <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
                         class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
                         <div>
@@ -489,13 +494,13 @@
                     <div class="bg-cover bg-center h-40" style="background-image: url('img/home.jpg');"></div>
                 </div>
 
-                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
                     <a href="https://bvsms.saude.gov.br/doacao-de-leite-humano-um-ato-que-salva-vidas/"
                         class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
                         <div>
                             <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Qual a importância da
                                 doação de leite ?</h2>
-                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            <p class="mt-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                 A doação de leite materno é fundamental para ampliar as chances de recuperação de bebês
                                 prematuros e/ou de baixo peso que estão internados em UTIs neonatais, além de proporcionar
                                 um desenvolvimento mais saudável por toda a vida.
@@ -514,6 +519,8 @@
 
         </div>
     </div>
+</div>
+    
 
 @endsection
 

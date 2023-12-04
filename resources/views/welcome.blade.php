@@ -8,25 +8,25 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
+    <link href="{{ asset('css/app.css') }}"  rel="stylesheet" >
     <!-- Styles -->
 
     <style>
-        body {
-            font-family: 'Figtree', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('/img/fundo.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            position: absolute;
-            right: 80px;
-        }
+      body {
+    font-family: 'Figtree', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/fundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    position: absolute;
+    right: 80px;
+}
     </style>
 
 </head>
@@ -41,7 +41,7 @@
     text-align: center; margin-bottom: 20px;">
         <img src="img/logo.jpg" style="height:100px">
         <form action="{{ route('login') }}" method="POST" style=" display: flex;
-    flex-direction: column;">
+    flex-direction: column;" >
             @csrf
             <input type="text" name="email" placeholder="Seu E-mail" required style=" margin-bottom: 10px;
     padding: 10px;
@@ -74,27 +74,27 @@
         
     </div>
     
-    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: white; padding: 0px; text-align: center; z-index: 2;">
-    <div class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 10px; text-align: center; z-index: 1;">
+  
+
+</body>
+<footer class="bg-gray-800 text-white p-4 text-center">
+    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgba(240, 140, 210, 0.7); padding: 0px; text-align: center; z-index: 2;">
+    <div class="navbar navbar-expand-md navbar-light bg-color shadow-sm">
+        <div style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 1;">
             <p style="color: black; margin: 0;">
-                Este site utiliza recursos do <a href="https://www.gov.br" target="_blank" style="cursor: pointer; color: black;">https://www.gov.br/</a>
+                Este site utiliza recursos do <a href="https://www.gov.br" target="_blank" style="cursor: pointer; color: white;">https://www.gov.br/</a>
             </p>
         </div>
     </div>
 </div>
 
-<div style="position: fixed; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 10px; text-align: center; z-index: 2;">
+<div style="position: fixed; left: 0; bottom: 0; width: 100%; color: white; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 2;">
     <div class="flex items-center gap-4">
-        <a href="https://github.com/Danpam12/doe_leite" style="margin-right: 800px; color: #e24ab4; display: inline-flex; align-items: center; padding: 2px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
+        <a href="https://github.com/Danpam12/doe_leite" style="margin-right: 800px; color: white; display: inline-flex; align-items: center; padding: 2px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
             DoeLeite
         </a>
     </div>
 </div>
-
-
-
-
-</body>
+    </footer>
 
 </html>
