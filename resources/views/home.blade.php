@@ -330,62 +330,68 @@
     }
 
     @media (min-width: 1024px) {
-        .lg\:gap-8 {
+        .lg\:gap-10{
             gap: 2rem
         }
 
-        .lg\:p-8 {
+        .lg\:p-10 {
             padding: 2rem
         }
+
+   
     }
 
-    /* Minhas exclusivas modificações "Victor" */
+    .grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
 
-
+    
+    
 </style>
+
 
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 @section('content')
-
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">
-            <div class="grey-bg container-fluid">
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12 w-16 md:w-32 lg:w-48 flex-auto flex-wrap justify-start">
-                        <div class="card bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100 shadow-md p-2 md:p-8 lg:p-12">
-                            <div class="card-content">
-                                <div class="card-body rounded-lg">
-                                    <div class="media d-flex">
-                                        <div class="align-self-center">
-                                            <img src="img/icon-perfil.png" alt="Ícone" class="icon-img" style="width: 100px">
-                                        </div>
-                                        <div class="media-body text-right font-sans p-4 md:p-8 lg:p-12">
-                                            <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Perfil</span>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="container-fluid">
+                    <div class="row grid-cols-5 gap-20 lg:gap-10">
+                        
+                    <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+                                                <img src="/img/icon-perfil.png" alt="Ícone" class="icon-img"
+                                                    style="width: 100px">
+                                            </div>
+                                            <div class="media-body text-right">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                @canany(['create-role', 'edit-role', 'delete-role'])
-                                        <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px;"
-
-                                        href="{{ route('roles.index') }}" class="btn btn-custom">
-                                        </i></i></a>
-                                        @endcanany
+                                    @canany(['create-role', 'edit-role', 'delete-role'])
+                                        <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie seu perfil</button> </a>
+                                    @endcanany
                                 </div>
                             </div>
                         </div>
+                    
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
 
-                        <div class="col-xl-3 col-sm-6 col-12 flex-auto flex-wrap justify-start">
-                            <div class="card bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100 shadow-md p-1 md:p-8 lg:p-12">
                                 <div class="card-content">
                                     <div class="card-body rounded-lg">
                                         <div class="media d-flex">
                                             <div class="align-self-center">
                                                 <img src="img/icon-usuario.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
-                                                </div>
-                                                <div class="media-body text-right font-sans p-4 md:p-8 lg:p-12 ">
-                                                    <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Usuário</span>
+
+                                            </div>
+                                            <div class="media-body text-right">
+
                                             </div>
                                         </div>
                                     </div>
@@ -394,98 +400,105 @@
                                   
                                         <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
 
-                                            href="{{ route('users.index') }}" class="btn btn-custom">
-                                            </i></i> </a>
-                                            @endcanany
-                                        </div>
-                                    </div>
+
+                                        <a     href="{{ route('users.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie usuário </button> </a>
+                                    @endcanany
+
                                 </div>
 
-                                <div class="col-xl-3 col-sm-6 col-12 flex-auto flex-wrap justify-start">
-                                    <div class="card bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100 shadow-md p-1 md:p-8 lg:p-12 ">
-                                        <div class="card-content">
-                                            <div class="card-body rounded-lg">
-                                                <div class="media d-flex">
-                                            <div class="align-self-center">
-                                                <img src="img/icon-ponto.png" alt="Ícone" class="icon-img"
+
+                        </div>
+                      
+                        <div class="col-md-2  mb-4">
+                            <div class="card" style="width: 150px;">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="media d-flex">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+                                                <img src="img/localizacao.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
                                             </div>
-                                            <div class="media-body text-right font-sans p-4 md:p-8 lg:p-12">
-                                                <span class="text-lg font-semibold mb-1. bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Ponto de Coleta</span>
+                                            <div class="media-body text-right color-white; font-weight: bold;border-width: 10px; border-style: solid; border-color: #e24ab4; border-radius: 8px; ">
                                             </div>
                                         </div>
                                     </div>
-                                        @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
-                                        <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-                                        href="{{ route('ponto_coletas.index') }}" class="btn btn-custom">
-                                    </i></i> </a>
+                                    @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+
+                                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7); ">
+    <button type="button" class="btn btn-default">Gerencie seu Ponto</button>
+</a>
+
+
+
                                     @endcanany
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-sm-6 col-12 flex-auto flex-wrap justify-start">
-                            <div class="card bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100 shadow-md p-1 md:p-8 lg:p-12">
+                       
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
+
                                 <div class="card-content">
                                     <div class="card-body ">
                                         <div class="media d-flex">
-                                            <div class="align-self-center">
-                                                <img src="img/icon-ponto.png" alt="Ícone" class="icon-img"
-                                                    style="width: 100px">
-                                                </div>
-                                                <div class="media-body text-right font-sans p-4 md:p-8 lg:p-12">
-                                                    <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">Gerenciar Agendamentos</span>
-                                                </div>
+
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+                                                <img src="/img/agenda.png" alt="Ícone" class="icon-img"
+                                                    style="width: 100px;">
+                                   </div>
+                                            <div class="media-body text-right">
                                             </div>
                                         </div>
-                                        @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
-                                        <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-                                        href="{{ route('agendamentos.index') }}" class="btn btn-custom">
-                                    </i></i> </a>
-                                    
+                                    </div>
+                                    @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
+                                    <a href="{{ route('agendamentos.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                            </i></i> <button type="button" class="btn btn-default"> Gerencie seu agendamento </button> </a>
+
                                     @endcanany
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-
-                        <div class="col-xl-3 col-sm-6 col-12 flex-auto flex-wrap justify-start">
-                            <div class="card bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100 shadow-md p-2 md:p-8 lg:p-12">
+                        
+                        
+                        <div class="col-md-2 mb-4">
+                            <div class="card" style="width: 150px;">
                                 <div class="card-content">
-                                    <div class="card-body rounded-lg">
-                                        <div class="media d-flex">
-                                        <div style="display: flex; justify-content: center; align-items: center; height: 12vh;">
+                                    <div class="card-body">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/doadora.jpg" alt="Ícone" class="icon-img"
                                                     style="width: 100px;">
                                             </div>
-                                            <div class="media-body text-right font-sans p-4 md:p-8 lg:p-12">
-                                                <span class="text-lg font-semibold mb-4 bg-summer-blue-100 flex flex-wrap justify-evenly items-center text-center dark:bg-boreal-blue-100">
-                                                    Gerenciar Doadoras</span>
+                                            <div class="media-body text-center">
+
                                             </div>
                                         </div>
                                     </div>
                                     @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
 
-                                    <a style="border-width: 20px; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
-                                    href="{{ route('cad_doadoras.index') }}" class="btn btn-custom">
-                                </i></i> </a>
-                                @endcanany
+                                        <a href="{{ route('cad_doadoras.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                    </i></i> <button type="button" class="btn btn-default"> Gerencie Doadora </button> </a>
+                                    @endcanany
+</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+</div>
+                        
+                      
 
-            <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-4 md:p-8 lg:p-12">
-                <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
-                class="scale-100 p-6 bg-gradient-to-r from-white-300 via-white-500 to-white-500 from-white-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
-                <div>
-                    <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Como doar leite materno?
-                    </h2>
-                    <p class="mt-4 text-white-500 dark:text-white-400 text-sm leading-relaxed">
-                        Para doar, basta ser saudável e não tomar nenhum medicamento que interfira na amamentação.
-                        Se este for o seu caso, entre em contato com o banco de leite mais próximo de sua casa ou
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
+                    <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
+                        class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
+                        <div>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Como doar leite materno?
+                            </h2>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                Para doar, basta ser saudável e não tomar nenhum medicamento que interfira na amamentação.
+                                Se este for o seu caso, entre em contato com o banco de leite mais próximo de sua casa ou
+
                                 ligue ao 136 para obter maiores informações de como e quando doar.
                             </p>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -498,13 +511,15 @@
                     <div class="bg-cover bg-center h-40" style="background-image: url('img/home.jpg');"></div>
                 </div>
 
-                <div class=" mt-2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-4 md:p-8 lg:p-12">
+
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
                     <a href="https://bvsms.saude.gov.br/doacao-de-leite-humano-um-ato-que-salva-vidas/"
-                    class="scale-100 p-6 bg-gradient-to-r from-white-300 via-white-500 to-white-500 from-white-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
-                    <div>
-                        <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Qual a importância da
-                            doação de leite ?</h2>
-                            <p class="mt-4 text-white-500 dark:text-white-400 text-sm leading-relaxed">
+                        class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
+                        <div>
+                            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Qual a importância da
+                                doação de leite ?</h2>
+                            <p class="mt-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+
                                 A doação de leite materno é fundamental para ampliar as chances de recuperação de bebês
                                 prematuros e/ou de baixo peso que estão internados em UTIs neonatais, além de proporcionar
                                 um desenvolvimento mais saudável por toda a vida.
@@ -522,6 +537,8 @@
         </div>
         </div>
     </div>
+</div>
+    
 
     @endsection
 
