@@ -17,7 +17,7 @@
             <div class="card-body">
                 <form action="{{ route('cad_doadoras.store', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    
+
 
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
@@ -42,7 +42,7 @@
                     <div class="mb-3 row">
                         <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error(endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
+                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
                             @error('endereco')
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
                             @endif
@@ -150,7 +150,7 @@
                         <div class="col-md-6">
                         <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
                         <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
-                          
+
                             @error('file')
                                 <span class="text-danger">{{ $file }}</span>
                             @enderror
@@ -162,13 +162,13 @@
                             <input type="submit" class="btn btn-primary" value="Atualizar Doadora">
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection
 
 
