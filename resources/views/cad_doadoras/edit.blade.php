@@ -15,9 +15,10 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('cad_doadoras.store', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
+               
+                <form action="{{ route('cad_doadoras.update', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    
+                    @method("PUT")
 
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
