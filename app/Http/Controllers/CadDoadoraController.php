@@ -9,6 +9,7 @@ use App\Models\Cad_doadora;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
+
 class CadDoadoraController extends Controller
 {
 
@@ -27,6 +28,7 @@ class CadDoadoraController extends Controller
     {
         return view('cad_doadoras.index', [
             'cad_doadoras' => Cad_doadora::latest()->paginate(3)
+            
         ]);
     }
 
@@ -48,12 +50,11 @@ class CadDoadoraController extends Controller
         Cad_doadora::create($request->all());
         return redirect()->route('cad_doadoras.index')
                 ->withSuccess(' Doadora foi adicionada com sucesso!');
-
+   
 
                 //File Upload
         if($request->hasFile('file') && $request->file('file')->isValid()) {
             
-
             $requestFile = $request->file;
 
             $extension = $requestFile->extension();
@@ -66,7 +67,7 @@ class CadDoadoraController extends Controller
         
         }
             $cad_doadora->save();
-
+ 
             return redirect()->route('cad_doadoras.index')->with('msg', 'criado com sucesso');
 
         
@@ -87,10 +88,13 @@ class CadDoadoraController extends Controller
      */
     public function edit(Cad_doadora $cad_doadora)
     {
-        return view('cad_doadoras.edit', [
-            'cad_doadora' => $cad_doadora
-        ]);
+       return view('cad_doadoras.edit', compact ('cad_doadora')
+        );
+
     }
+   
+
+    
 
     /**
      * Update the specified resource in storage.
@@ -120,6 +124,7 @@ class CadDoadoraController extends Controller
                 $cad_doadora->file = $fileName;
             }
     }
+
 
     /**
      * Remove the specified resource from storage.

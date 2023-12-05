@@ -15,17 +15,11 @@
             <thead>
 
                 <tr class="border border-slate-600 rounded-xl"  >
+                    <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Nascimento</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Endereço</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Fone</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Email</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Pré-natal</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Data do Parto</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Tabagismo</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Etilismo</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Drogas</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Exames</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Arquivos</th>
                     <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
                 </tr>
@@ -34,19 +28,12 @@
                 @forelse ($cad_doadoras as $cad_doadora)
 
                     <tr class="border border-slate-600 rounded-xl">
-                        <th scope="row" class="border border-slate-700 rounded-xl">{{ $loop->iteration }}</th>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->nome }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->data_nasc }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->endereco }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->fone }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->email }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->pre_nat }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->data_parto }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->tabagismo }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->etilismo }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->drogas }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->exames }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $agendamento->file }}</td>
+                        <th scope="row" class="border border-slate-700 rounded-xl">{{ $cad_doadora->id }}</th>
+                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->nome }}</td>
+                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->data_nasc }}</td>
+                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->fone }}</td>
+                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->email }}</td>
+                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->file }}</td>
                         <td class="border border-slate-700 rounded-xl">
 
                             <form action="{{ route('cad_doadoras.destroy', $cad_doadora->id) }}" method="post">
