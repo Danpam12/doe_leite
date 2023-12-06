@@ -4,12 +4,12 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">
-                <div class="float-start">
+            <div class="card-header" style="background-color: #e24ab4">
+                <div class="float-start" style="color: white">
                     Editar Usuário
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
             <div class="card-body">
@@ -83,7 +83,7 @@
                     </div>
                     
                     <div class="mb-3 row">
-                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Atualizar">
+                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" style="background-color: #e24ab4"value="Atualizar">
                     </div>
                     
                 </form>

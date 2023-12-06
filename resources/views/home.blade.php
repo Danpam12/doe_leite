@@ -354,9 +354,9 @@
 @section('content')
 <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-20">
                 <div class="container-fluid">
-                    <div class="row grid-cols-5 gap-20 lg:gap-10">
+                    <div class="row grid-cols-10 gap-20 lg:gap-10">
                         
                     <div class="col-md-2 mb-4">
                             <div class="card" style="width: 150px;">
@@ -373,7 +373,7 @@
                                     </div>
                                     @canany(['create-role', 'edit-role', 'delete-role'])
                                         <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
-                                        </i></i> <button type="button" class="btn btn-default"> Gerencie seu perfil</button> </a>
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie seu Perfil</button> </a>
                                     @endcanany
                                 </div>
                             </div>
@@ -385,7 +385,7 @@
                                 <div class="card-content">
                                     <div class="card-body rounded-lg">
                                         <div class="media d-flex">
-                                            <div class="align-self-center">
+                                        <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="img/icon-usuario.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
 
@@ -398,15 +398,13 @@
                                     @canany(['create-user', 'edit-user', 'delete-user'])
                                     
                                   
-                                        <a style="border-width: 20px; text-center; border-style: solid; border-color: #e24ab4; border-radius: 8px; background-color: #e24ab4;color: white;margin: 90px; "
 
-
-                                        <a     href="{{ route('users.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
-                                        </i></i> <button type="button" class="btn btn-default"> Gerencie usuário </button> </a>
+                                          <a href="{{ route('users.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
+                                        </i></i> <button type="button" class="btn btn-default"> Gerencie Usuário </button> </a>
                                     @endcanany
 
                                 </div>
-
+</div>
 
                         </div>
                       
@@ -454,7 +452,7 @@
                                     </div>
                                     @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
                                     <a href="{{ route('agendamentos.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
-                                            </i></i> <button type="button" class="btn btn-default"> Gerencie seu agendamento </button> </a>
+                                            </i></i> <button type="button" class="btn btn-default"> Gerencie seu Agendamento </button> </a>
 
                                     @endcanany
                                     </div>
@@ -489,9 +487,9 @@
                         
                       
 
-                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-1">
                     <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
-                        class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
+                        class="scale-100 p-6 bg-white-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-white-500">
                         <div>
                             <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Como doar leite materno?
                             </h2>
@@ -508,13 +506,13 @@
                             </svg>
                         </div>
                     </a>
-                    <div class="bg-cover bg-center h-40" style="background-image: url('img/home.jpg');"></div>
+                    <div class="bg-cover bg-center h-90" style="background-image: url('img/home.jpg');"></div>
                 </div>
 
 
-                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-8">
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-1">
                     <a href="https://bvsms.saude.gov.br/doacao-de-leite-humano-um-ato-que-salva-vidas/"
-                        class="scale-100 p-6 bg-pink-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
+                        class="scale-100 p-6 bg-white-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
                         <div>
                             <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Qual a importância da
                                 doação de leite ?</h2>
@@ -532,7 +530,7 @@
                     </div>
 
                 </a>
-                <div class="bg-cover bg-center h-40" style="background-image: url('img/home1.jpg');"></div>
+                <div class="bg-cover bg-center h-90" style="background-image: url('img/home1.jpg');"></div>
             </div>
         </div>
         </div>

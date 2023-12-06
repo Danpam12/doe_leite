@@ -1,37 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-md-11">
-        <div class="card">
-            <div class="card-header">Lista de Agendamentos</div>
-            <div class="card-body">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<div class="card p-1 m-2 md:m-8">
+               <div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Agendamentos</div>
+            <div class="card-body rounded-xl">
                 @can('create-agendamento')
-                    <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
+                    <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-lx my-2 font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
                 @endcan
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
                     <thead>
                         <tr>
                             <!--<th scope="col">S#</th>-->
-                            <th scope="col">Ponto de Coleta</th>
-                            <th scope="col">Data</th>
-                            <th scope="col">Hora</th>
-                            <th scope="col">Tipo de Coleta</th>
-                            <th scope="col">Nome</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Ponto de Coleta</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Data</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Hora</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Tipo de Coleta</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
                             <!--<th scope="col">CPF</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Email</th>
                             <th scope="col">Endereço</th>-->
                             @can('create-role')
-                                <th scope="col">Quantidade</th>
+                                <th scope="col" class="border border-slate-600 rounded-xl">Quantidade</th>
                             @endcan
-                            <th scope="col">Status</th>
-                            <th scope="col">Ação</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Status</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($agendamentos as $agendamento)
-                            <tr>
+                        <tr class="border border-slate-600 rounded-xl">
                                 <!--<th scope="row">{{ $loop->iteration }}</th>-->
                                 <td>{{ $agendamento->pontoColeta->nome }}</td>
                                 <td>{{ $agendamento->data }}</td>
@@ -64,7 +63,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <td colspan="13">
+                        <td colspan="10" class="border border-slate-600 rounded-xl">
                                 <span class="text-danger">
                                     <strong>Nenhum agendamento encontrado!</strong>
                                 </span>

@@ -6,12 +6,12 @@
     <div class="col-md-8">
 
         <div class="card">
-            <div class="card-header">
-                <div class="float-start">
+            <div class="card-header" style="background-color: #e24ab4">
+                <div class="float-start" style="color: white">
                     Informações do Ponto de Coleta
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black"  >&larr; Voltar</a>
                 </div>
             </div>
             <div class="card-body">

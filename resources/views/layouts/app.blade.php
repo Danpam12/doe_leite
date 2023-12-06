@@ -40,7 +40,7 @@
                             </li>
                             
                             @canany(['create-role', 'edit-role', 'delete-role'])
-                            <a class="nav-link font-bold" href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
+                            <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
                             @endcanany
 
                             @canany(['create-user', 'edit-user', 'delete-user'])
