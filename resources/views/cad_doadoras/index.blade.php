@@ -4,10 +4,10 @@
 
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <div class="card p-1 m-2 md:m-8">
-    <div class="card-header rounded-xl">Lista de Doadoras</div>
+<div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Doadoras</div>
     <div class="card-body rounded-xl">
         @can('create-cad-doadora')
-            <a href="{{ route('cad_doadoras.create') }}" class="btn btn-success btn-lx my-2 font-semibold text-slate-900"><i class="bi bi-plus-circle"></i> Adicionar nova doadora</a>
+            <a href="{{ route('cad_doadoras.create') }}" class="btn btn-success btn-lx my-2 font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar nova doadora</a>
 
         @endcan
 
