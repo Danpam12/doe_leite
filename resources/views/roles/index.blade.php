@@ -16,7 +16,7 @@
         <tr>
             <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
             <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
-            <th scope="col" class="border border-slate-600 rounded-xl" style="width: 250px;">Ações</th>
+            <th scope="col" class="border border-slate-600 rounded-xl" style="width: 255px;">Ações</th>
         </tr>
     </thead>
             <tbody>
@@ -26,7 +26,9 @@
                         <td class="border border-slate-700 rounded-xl">{{ $role->name }}</td>
                         <td class="border border-slate-700 rounded-xl">
                             <div class="btn-group" role="group">
+                                @can('show-role')
                                 <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
+                                @endcan
                                 @if ($role->name != 'Super Admin')
                                     @can('edit-role')
                                         <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>

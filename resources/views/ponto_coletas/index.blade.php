@@ -34,9 +34,9 @@
                         <form action="{{ route('ponto_coletas.destroy', $ponto_coleta->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-
+                            @can('show-ponto-coleta')
                             <a href="{{ route('ponto_coletas.show', $ponto_coleta->id) }}" class="btn btn-warning btn-xl mb-2 rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
-
+                            @endcan
                             @can('edit-ponto-coleta')
                                 <a href="{{ route('ponto_coletas.edit', $ponto_coleta->id) }}" class="btn btn-primary btn-xl mb-2 rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                             @endcan
