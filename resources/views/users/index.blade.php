@@ -41,7 +41,7 @@
 
                             @if (in_array('Super Admin', $user->getRoleNames()->toArray() ?? []) )
                                 @if (Auth::user()->hasRole('Super Admin'))
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endif
                             @else
                                 @can('edit-user')
