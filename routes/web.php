@@ -40,3 +40,4 @@ Route::resources([
     'agendamentos' => AgendamentoController::class,
     'cad_doadoras' => CadDoadoraController::class
 ]);
+

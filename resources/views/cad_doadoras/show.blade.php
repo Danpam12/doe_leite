@@ -87,11 +87,35 @@
                 </div>
 
                 <div class="row">
-                    <label for="exames" class="col-md-4 col-form-label text-md-end text-start"><strong>Exames:</strong></label>
+                    <label for="vdrl" class="col-md-4 col-form-label text-md-end text-start"><strong>Vdrl:</strong></label>
                     <div class="col-md-6" style="line-height: 35px;">
-                        {{ $cad_doadora->exames }}
+                        {{ $cad_doadora->vdrl }}
                     </div>
                 </div>
+
+                <div class="row">
+                    <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start"><strong>Hbsag:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $cad_doadora->hbsag }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="hiv" class="col-md-4 col-form-label text-md-end text-start"><strong>Hiv:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $cad_doadora->hiv }}
+                    </div>
+                </div>
+
+                <div class="row">
+                        <label for="file" class="col-md-4 col-form-label text-md-end text-start"><strong>Aquivo:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                        
+                        <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
+                          
+                           
+                        </div>
+                    </div>
 
                 <!-- Adicionar mais campos conforme necessário -->
 
