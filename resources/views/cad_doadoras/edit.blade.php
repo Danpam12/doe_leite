@@ -133,18 +133,47 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="exames" class="col-md-4 col-form-label text-md-end text-start">Exames</label>
+                        <label for="vdrls" class="col-md-4 col-form-label text-md-end text-start">Vdrls</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('exames') is-invalid @enderror" id="exames" name="exames">
-                                <option value="vdrl"{{ $cad_doadora->exames == 'vdrl' ? 'selected' : '' }}>vdrl</option>
-                                <option value="hbsag"{{ $cad_doadora->exames == 'hbsag' ? 'selected' : '' }}>hbsag</option>
-                                <option value="hiv"{{ $cad_doadora->exames == 'hiv' ? 'selected' : '' }}>hiv</option>
+                        <select class="form-control @error('vdrls') is-invalid @enderror" id="vdrls" name="vdrls">
+                                <option value="vdrl"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
+                               
                             </select>
-                            @error('exames')
-                                <span class="text-danger">{{ $exames}}</span>
+                            @error('vdrls')
+                                <span class="text-danger">{{ $vdrls}}</span>
                             @enderror
                         </div>
                     </div>
+
+                    <div class="mb-3 row">
+                        <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start">Hbsag</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
+                                <option value="vdrl"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
+                               
+                            </select>
+                            @error('hbsag')
+                                <span class="text-danger">{{ $hbsag}}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="hiv" class="col-md-4 col-form-label text-md-end text-start">Hiv</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
+                                <option value="vdrl"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
+                               
+                            </select>
+                            @error('hiv')
+                                <span class="text-danger">{{ $hiv}}</span>
+                            @enderror
+                        </div>
+                    </div>
+
 
                     <div class="mb-3 row">
                         <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>

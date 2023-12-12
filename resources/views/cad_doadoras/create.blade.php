@@ -131,15 +131,40 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="exames" class="col-md-4 col-form-label text-md-end text-start">Exames</label>
+                        <label for="vdrl" class="col-md-4 col-form-label text-md-end text-start">Vdrl</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('exames') is-invalid @enderror" id="exames" name="exames">
-                                <option value="vdrl">vdrl</option>
-                                <option value="hbsag">hbsag</option>
-                                <option value="hiv">hiv</option>
-                            </select>
-                            @if($errors->has('exames'))
-                                <span class="text-danger">{{ $errors->first('exames')}}</span>
+                        <select class="form-control @error('vdrl') is-invalid @enderror" id="vdrl" name="vdrl">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                        </select>    
+                            @if($errors->has('vdrl'))
+                                <span class="text-danger">{{ $errors->first('vdrl')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start">Hbsag</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                        </select>    
+                            @if($errors->has('hbsag'))
+                                <span class="text-danger">{{ $errors->first('hbsag')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="hiv" class="col-md-4 col-form-label text-md-end text-start">Hiv</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                        </select>    
+                            @if($errors->has('hiv'))
+                                <span class="text-danger">{{ $errors->first('hiv')}}</span>
                             @endif
                         </div>
                     </div>
