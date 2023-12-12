@@ -39,23 +39,23 @@
                                 </div>
                             </li>
                             
-                            @canany(['create-role', 'edit-role', 'delete-role'])
+                            @canany(['create-role', 'edit-role', 'delete-role','show-user'])
                             <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
                             @endcanany
 
-                            @canany(['create-user', 'edit-user', 'delete-user'])
+                            @canany(['create-user', 'edit-user', 'delete-user','show-user'])
                                 <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Usuário</a>
                             @endcanany
 
-                            @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+                            @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta', 'show-ponto-coleta'])
                                 <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Ponto de Coleta</a>
                             @endcanany
 
-                            @canany(['create-agendamento', 'edit-agendamento', 'delete-ponto-coleta'])
+                            @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento', 'show-agendamento'])
                                 <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Agendamentos</a>
                             @endcanany
 
-                            @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
+                            @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
                                 <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Doadoras</a>
                             @endcanany
                         @endauth

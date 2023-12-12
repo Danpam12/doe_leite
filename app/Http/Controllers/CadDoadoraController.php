@@ -16,9 +16,10 @@ class CadDoadoraController extends Controller
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:create-cad-doadora|edit-cad-doadora|delete-cad-doadora', ['only' => ['index','show']]);
+       $this->middleware('permission:create-cad-doadora|edit-cad-doadora|delete-cad-doadora|show-cad-doadora', ['only' => ['index','show']]);
        $this->middleware('permission:create-cad-doadora', ['only' => ['create','store']]);
        $this->middleware('permission:edit-cad-doadora', ['only' => ['edit','update']]);
+       $this->middleware('permission:show-cad-doadora', ['only' => ['show']]);
        $this->middleware('permission:delete-cad-doadora', ['only' => ['destroy']]);
     }
     /**

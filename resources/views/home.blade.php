@@ -371,7 +371,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @canany(['create-role', 'edit-role', 'delete-role'])
+                                    @canany(['create-role', 'edit-role', 'delete-role', 'show-role'])
                                         <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                         </i></i> <button type="button" class="btn btn-default"> Gerencie seu Perfil</button> </a>
                                     @endcanany
@@ -395,7 +395,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @canany(['create-user', 'edit-user', 'delete-user'])
+                                    @canany(['create-user', 'edit-user', 'delete-user', 'show-user'])
                                     
                                   
 
@@ -421,11 +421,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta'])
+                                    @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta', 'show-ponto-coleta'])
 
                                     <a href="{{ route('ponto_coletas.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7); ">
-    <button type="button" class="btn btn-default">Gerencie seu Ponto</button>
-</a>
+                                    <button type="button" class="btn btn-default">Gerencie seu Ponto</button>
+                                    </a>
 
 
 
@@ -450,7 +450,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento'])
+                                    @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento', 'show-agendamento'])
                                     <a href="{{ route('agendamentos.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                             </i></i> <button type="button" class="btn btn-default"> Gerencie seu Agendamento </button> </a>
 
@@ -474,7 +474,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora'])
+                                    @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
 
                                         <a href="{{ route('cad_doadoras.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                     </i></i> <button type="button" class="btn btn-default"> Gerencie Doadora </button> </a>
