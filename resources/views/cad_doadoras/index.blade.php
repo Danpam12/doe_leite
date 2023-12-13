@@ -33,26 +33,28 @@
             <thead>
 
                 <tr class="border border-slate-600 rounded-xl"  >
-                    <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Nascimento</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Fone</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Email</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Arquivos</th>
-                    <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">ID</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Nome</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Nascimento</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Fone</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Email</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Arquivos</th>
+                    <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ação</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($cad_doadoras as $cad_doadora)
 
                     <tr class="border border-slate-600 rounded-xl">
-                        <th scope="row" class="border border-slate-700 rounded-xl" style="color: rebeccapurple">{{ $cad_doadora->id }}</th>
-                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->nome }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->data_nasc }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->fone }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->email }}</td>
-                        <td class="border border-slate-700 rounded-xl">{{ $cad_doadora->file }}</td>
-                        <td class="border border-slate-700 rounded-xl">
+
+                        <th scope="row" class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->id }}</th>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->nome }}</td>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->data_nasc }}</td>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->fone }}</td>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->email }}</td>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $cad_doadora->file }}</td>
+                        <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">
+
 
                             <form action="{{ route('cad_doadoras.destroy', $cad_doadora->id) }}" method="post">
                                 @csrf

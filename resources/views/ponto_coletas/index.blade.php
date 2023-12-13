@@ -31,23 +31,27 @@
         <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto carousel flex-wrap divide-y divide-gray-300 w-full">
             <thead class="text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400 w-full md:w-auto">
 
-                <tr class="flex-col xl:flex-row ">
-                <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
-                <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
-                <th scope="col" class="border border-slate-600 rounded-xl">Email</th>
-                <th scope="col" class="border border-slate-600 rounded-xl">Fone</th>
-                <th scope="col" class="border border-slate-600 rounded-xl">Endereço</th>
-                <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
+
+                <tr>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">ID</th>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Nome</th>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Email</th>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Fone</th>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Endereço</th>
+                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ação</th>
+
                 </tr>
             </thead>
             <tbody>
                 @forelse ($ponto_coletas as $ponto_coleta)
-                <tr class="border border-slate-600 rounded-xl">
-                    <th scope="row" class="border border-slate-600 rounded-xl" style="color: rebeccapurple">{{ $loop->iteration }}</th>
-                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->nome }}</td>
-                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->email }}</td>
-                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->fone }}</td>
-                    <td class="border border-slate-600 rounded-xl">{{ $ponto_coleta->endereco }}</td>
+
+                <tr class="border border-slate-600 rounded-xl"style="color: #e24ab4">
+                    <th scope="row" class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $loop->iteration }}</th>
+                    <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->nome }}</td>
+                    <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->email }}</td>
+                    <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->fone }}</td>
+                    <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->endereco }}</td>
+
                     <td class="border border-slate-600 rounded-xl">
                         <form action="{{ route('ponto_coletas.destroy', $ponto_coleta->id) }}" method="post">
                             @csrf

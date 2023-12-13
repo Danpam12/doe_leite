@@ -14,17 +14,19 @@
     <thead class="table-white" style="color: #e24ab4">
 
         <tr>
-            <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
-            <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
-            <th scope="col" class="border border-slate-600 rounded-xl" style="width: 255px;">Ações</th>
+            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">ID</th>
+            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Nome</th>
+            <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4" style="width: 255px;">Ações</th>
         </tr>
     </thead>
             <tbody>
                 @forelse ($roles as $role)
                     <tr>
-                        <th scope="row" class="border border-slate-700 rounded-xl" style="color: rebeccapurple">{{ $loop->iteration }}</th>
-                        <td class="border border-slate-700 rounded-xl">{{ $role->name }}</td>
-                        <td class="border border-slate-700 rounded-xl">
+
+                        <th scope="row" class="border border-slate-700 rounded-xl" style="color: #e24ab4">{{ $loop->iteration }}</th>
+                        <td class="border border-slate-700 rounded-xl" style="color: #e24ab4">{{ $role->name }}</td>
+                        <td class="border border-slate-700 rounded-xl" style="color: #e24ab4">
+
                             <div class="btn-group" role="group">
                                 @can('show-role')
                                 <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>

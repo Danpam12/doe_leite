@@ -30,25 +30,25 @@
                     <thead>
                         <tr>
                             <!--<th scope="col">S#</th>-->
-                            <th scope="col" class="border border-slate-600 rounded-xl">Ponto de Coleta</th>
-                            <th scope="col" class="border border-slate-600 rounded-xl">Data</th>
-                            <th scope="col" class="border border-slate-600 rounded-xl">Hora</th>
-                            <th scope="col" class="border border-slate-600 rounded-xl">Tipo de Coleta</th>
-                            <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ponto de Coleta</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Data</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Hora</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Tipo de Coleta</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Nome</th>
                             <!--<th scope="col">CPF</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Email</th>
                             <th scope="col">Endereço</th>-->
                             @can('create-role')
-                                <th scope="col" class="border border-slate-600 rounded-xl">Quantidade</th>
+                                <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Quantidade</th>
                             @endcan
-                            <th scope="col" class="border border-slate-600 rounded-xl">Status</th>
-                            <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Status</th>
+                            <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($agendamentos as $agendamento)
-                        <tr class="border border-slate-600 rounded-xl">
+                        <tr class="border border-slate-600 rounded-xl" style="color: #e24ab4">
                                 <!--<th scope="row">{{ $loop->iteration }}</th>-->
                                 <td>{{ $agendamento->pontoColeta->nome }}</td>
                                 <td>{{ $agendamento->data }}</td>
