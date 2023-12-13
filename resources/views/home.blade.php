@@ -61,8 +61,8 @@
         font-weight: bolder
     }
 
-   
- 
+
+
     button,
     input,
     optgroup,
@@ -77,7 +77,7 @@
         padding: 0
     }
 
-   
+
     .relative {
         position: relative
     }
@@ -338,31 +338,30 @@
             padding: 2rem
         }
 
-   
+
     }
 
     .grid-cols-5 {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
-    
-    
+
+
 </style>
 
 
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-20">
+        <div class="col-md-20">
                 <div class="container-fluid">
                     <div class="row grid-cols-10 gap-20 lg:gap-10">
-                        
+
                     <div class="col-md-2 mb-4">
                             <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <div class="media d-flex">
+                                        <div class="media d-flex p-1 m-2 md:m-8">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/icon-perfil.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
@@ -379,13 +378,13 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                         <div class="col-md-2 mb-4">
                             <div class="card" style="width: 150px;">
 
                                 <div class="card-content">
                                     <div class="card-body rounded-lg">
-                                        <div class="media d-flex">
+                                        <div class="media d-flex p-1 m-2 md:m-8">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="img/icon-usuario.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
@@ -397,8 +396,8 @@
                                         </div>
                                     </div>
                                     @canany(['create-user', 'edit-user', 'delete-user', 'show-user'])
-                                    
-                                  
+
+
 
                                           <a href="{{ route('users.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                         </i></i> <button type="button" class="btn btn-default"> Gerencie Usuário </button> </a>
@@ -408,12 +407,12 @@
 </div>
 
                         </div>
-                      
+
                         <div class="col-md-2  mb-4">
                             <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <div class="media d-flex">
+                                        <div class="media d-flex p-1 m-2 md:m-8">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="img/localizacao.png" alt="Ícone" class="icon-img"
                                                     style="width: 100px">
@@ -435,13 +434,13 @@
                             </div>
                         </div>
 
-                       
+
                         <div class="col-md-2 mb-4">
                             <div class="card" style="width: 150px;">
 
                                 <div class="card-content">
                                     <div class="card-body ">
-                                        <div class="media d-flex">
+                                        <div class="media d-flex p-1 m-2 md:m-8">
 
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/agenda.png" alt="Ícone" class="icon-img"
@@ -460,12 +459,13 @@
                                 </div>
                             </div>
 
-                        
-                        
+
+
                         <div class="col-md-2 mb-4">
                             <div class="card" style="width: 150px;">
                                 <div class="card-content">
                                     <div class="card-body">
+                                        <div class="media d-flex p-1 m-2 md:m-8">
                                         <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                                                 <img src="/img/doadora.jpg" alt="Ícone" class="icon-img"
                                                     style="width: 100px;">
@@ -485,8 +485,8 @@
                             </div>
                         </div>
 </div>
-                        
-                      
+
+
 
                 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-1">
                     <a href="https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/10-passos-para-ser-doadora-de-leite-materno"
@@ -537,7 +537,6 @@
         </div>
     </div>
 </div>
-    
+
 
     @endsection
-

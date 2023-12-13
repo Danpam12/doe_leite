@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card">
-            <div class="card-header"style="background-color: #e24ab4">
+        <div class="card p-1 m-2 md:m-8">
+            <div class="card-header" style="background-color: #e24ab4">
                 <div class="float-start" style="color: white">
                     Adicionar novo Usuário
                 </div>
@@ -12,7 +14,7 @@
                     <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-pink-200">
                 <form action="{{ route('users.store') }}" method="post">
                     @csrf
 
@@ -55,7 +57,7 @@
 
                     <div class="mb-3 row">
                         <label for="roles" class="col-md-4 col-form-label text-md-end text-start">Perfil</label>
-                        <div class="col-md-6">           
+                        <div class="col-md-6">
                             <select class="form-select @error('roles') is-invalid @enderror" multiple aria-label="Roles" id="roles" name="roles[]">
                                 @forelse ($roles as $role)
 
@@ -64,7 +66,7 @@
                                         {{ $role }}
                                         </option>
                                     @else
-                                        @if (Auth::user()->hasRole('Super Admin'))   
+                                        @if (Auth::user()->hasRole('Super Admin'))
                                             <option value="{{ $role }}" {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
                                             {{ $role }}
                                             </option>
@@ -80,7 +82,7 @@
                             @endif
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" style="background-color: #e24ab4" value="Adicionar">
                     </div>
@@ -89,5 +91,5 @@
             </div>
         </div>
     </div>
-</div>    
+</div>
 @endsection

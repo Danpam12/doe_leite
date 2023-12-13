@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <div class="row justify-content-center">
     <div class="col-md-8">
 
-        <div class="card">
-            <div class="card-header">
-                <div class="float-start">
+        <div class="card p-1 m-2 md:m-8">
+            <div class="card-header" style="background-color: #e24ab4">
+                <div class="float-start" style="color:white">
                     Editar Nova Doadora
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
-               
+            <div class="card-body bg-pink-200">
+
                 <form action="{{ route('cad_doadoras.update', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("PUT")
@@ -43,7 +44,7 @@
                     <div class="mb-3 row">
                         <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error(endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
+                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
                             @error('endereco')
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
                             @endif
@@ -138,7 +139,7 @@
                         <select class="form-control @error('vdrls') is-invalid @enderror" id="vdrls" name="vdrls">
                                 <option value="vdrl"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
-                               
+
                             </select>
                             @error('vdrls')
                                 <span class="text-danger">{{ $vdrls}}</span>
@@ -152,7 +153,7 @@
                         <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
                                 <option value="vdrl"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
-                               
+
                             </select>
                             @error('hbsag')
                                 <span class="text-danger">{{ $hbsag}}</span>
@@ -166,7 +167,7 @@
                         <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
                                 <option value="vdrl"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
-                               
+
                             </select>
                             @error('hiv')
                                 <span class="text-danger">{{ $hiv}}</span>
@@ -180,7 +181,7 @@
                         <div class="col-md-6">
                         <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
                         <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
-                          
+
                             @error('file')
                                 <span class="text-danger">{{ $file }}</span>
                             @enderror
@@ -189,16 +190,16 @@
 
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
-                            <input type="submit" class="btn btn-primary" value="Atualizar Doadora">
+                            <input type="submit" class="btn btn-primary" value="Atualizar Doadora"  style="background-color: #e24ab4">
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection
 
 

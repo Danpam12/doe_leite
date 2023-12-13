@@ -1,23 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <div class="row justify-content-center">
     <div class="col-md-8">
 
-        <div class="card">
+        <div class="card p-1 m-2 md:m-8">
             <div class="card-header" style="background-color: #e24ab4">
                 <div class="float-start"style="color: white">
                     Adicionar Nova Doadora
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm"style="background-color: white; color: black">&larr; Voltar</a>
+                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-pink-200">
                 <form action="{{ route('cad_doadoras.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    
+
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
                         <div class="col-md-6">
@@ -136,7 +137,7 @@
                         <select class="form-control @error('vdrl') is-invalid @enderror" id="vdrl" name="vdrl">
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
-                        </select>    
+                        </select>
                             @if($errors->has('vdrl'))
                                 <span class="text-danger">{{ $errors->first('vdrl')}}</span>
                             @endif
@@ -149,7 +150,7 @@
                         <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
-                        </select>    
+                        </select>
                             @if($errors->has('hbsag'))
                                 <span class="text-danger">{{ $errors->first('hbsag')}}</span>
                             @endif
@@ -162,7 +163,7 @@
                         <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
                                 <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
-                        </select>    
+                        </select>
                             @if($errors->has('hiv'))
                                 <span class="text-danger">{{ $errors->first('hiv')}}</span>
                             @endif
@@ -178,18 +179,18 @@
                             @endif
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
                             <input type="submit" class="btn btn-primary" style="background-color: #e24ab4" value="Adicionar Doadora">
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection
 

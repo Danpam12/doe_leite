@@ -22,10 +22,12 @@
                 </thead>
             <tbody>
                 @forelse ($users as $user)
+
                 <tr class="border border-slate-600 rounded-xl" style="color: #e24ab4">
                     <th scope="row" class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $loop->iteration }}</th>
                     <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $user->name }}</td>
                     <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $user->email }}</td>
+
                     <td class="border border-slate-700 rounded-xl">
                         @forelse ($user->getRoleNames() as $role)
                             <span class="badge bg-primary rounded-xl">{{ $role }}</span>

@@ -2,16 +2,35 @@
 
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+    @media (max-width: 767px) {
+        .carousel {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            scroll-snap-align: start;
+       }
+    }
+</style>
 <div class="card p-1 m-2 md:m-8">
 <div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Pontos</div>
-    <div class="card-body rounded-xl">
+    <div class="card-body rounded-xl glass-table">
 
         @can('create-ponto-coleta')
-            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-xl my-2 font-semibold text-slate-900"style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
+            <a href="{{ route('ponto_coletas.create') }}" class="btn btn-success btn-xl my-2 font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo Ponto de Coletar</a>
         @endcan
 
-        <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
-            <thead>
+        <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto carousel flex-wrap divide-y divide-gray-300 w-full">
+            <thead class="text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400 w-full md:w-auto">
+
 
                 <tr>
                 <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">ID</th>
@@ -20,16 +39,19 @@
                 <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Fone</th>
                 <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Endereço</th>
                 <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ação</th>
+
                 </tr>
             </thead>
             <tbody>
                 @forelse ($ponto_coletas as $ponto_coleta)
+
                 <tr class="border border-slate-600 rounded-xl"style="color: #e24ab4">
                     <th scope="row" class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $loop->iteration }}</th>
                     <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->nome }}</td>
                     <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->email }}</td>
                     <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->fone }}</td>
                     <td class="border border-slate-600 rounded-xl"style="color: #e24ab4">{{ $ponto_coleta->endereco }}</td>
+
                     <td class="border border-slate-600 rounded-xl">
                         <form action="{{ route('ponto_coletas.destroy', $ponto_coleta->id) }}" method="post">
                             @csrf
