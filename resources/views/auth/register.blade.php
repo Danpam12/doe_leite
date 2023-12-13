@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="background-color: #e24ab4; color: white">{{ __('Cadastrar') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-pink-200">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

@@ -370,7 +370,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     @canany(['create-role', 'edit-role', 'delete-role', 'show-role'])
                                         <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                         </i></i> <button type="button" class="btn btn-default"> Gerencie seu Perfil</button> </a>
