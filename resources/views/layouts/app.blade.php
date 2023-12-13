@@ -21,44 +21,56 @@
                 </a>
                 <main class="py-4">
                     <div class="navbar-nav ms-auto">
+                        
                         @auth
-                            <li class="nav-item dropdown" style="padding: 0px; border: 10; border-radius: 10px; background-color: #ffffff; color: black; position: absolute; right: 0; top: 30px;">
+                        
+                            <li class="nav-item dropdown" style="padding: 2px;  border-radius: 10px; background-color: #ffffff; color: #e24ab4; position: absolute; right: 6px;">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+                                <div class="container" >
+    
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                                     <!-- Adicione aqui qualquer outra opção de menu desejada -->
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Sair') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" >
                                         @csrf
                                     </form>
                                 </div>
                             </li>
-                            
+                          
+
+                            @if(!request()->is('home'))
+
                             @canany(['create-role', 'edit-role', 'delete-role','show-user'])
-                            <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
+                            <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right:80px; color: #e24ab4;">Perfil    </a>
                             @endcanany
 
                             @canany(['create-user', 'edit-user', 'delete-user','show-user'])
-                                <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Usuário</a>
+                                <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px;   color: #e24ab4;">Usuário</a>
                             @endcanany
 
                             @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta', 'show-ponto-coleta'])
-                                <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Ponto de Coleta</a>
+                                <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 70px;color: #e24ab4;">Ponto de Coleta</a>
                             @endcanany
 
                             @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento', 'show-agendamento'])
-                                <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Agendamentos</a>
+                                <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 70px; padding: 10px; color: #e24ab4;">Agendamentos</a>
                             @endcanany
 
                             @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
-                                <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Doadoras</a>
+                                <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right:150px;   color: #e24ab4;">Doadoras</a>
                             @endcanany
+                            @endif
+
                         @endauth
+
                     </div>
 
                     <div class="container">
@@ -86,7 +98,7 @@
         </div>
     </div>
 </div>
-
+</div>
 <div style="position: fixed; left: 0; bottom: 0; width: 100%; color: white; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 2;">
     <div class="flex items-center gap-4">
         <a href="https://github.com/Danpam12/doe_leite" style="margin-right: 800px; color: white; display: inline-flex; align-items: center; padding: 2px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">

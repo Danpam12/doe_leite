@@ -371,6 +371,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     @canany(['create-role', 'edit-role', 'delete-role', 'show-role'])
                                         <a  href="{{ route('roles.index') }}" class="btn btn-custom" style="border-radius: 4px; background-color: rgba(240, 140, 210, 0.7);">
                                         </i></i> <button type="button" class="btn btn-default"> Gerencie seu Perfil</button> </a>
@@ -508,11 +509,11 @@
                     </a>
                     <div class="bg-cover bg-center h-90" style="background-image: url('img/home.jpg');"></div>
                 </div>
-
+</div>
 
                 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-1">
                     <a href="https://bvsms.saude.gov.br/doacao-de-leite-humano-um-ato-que-salva-vidas/"
-                        class="scale-100 p-6 bg-white-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-pink-500">
+                    class="scale-100 p-6 bg-white-700 dark:bg-pink-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-pink/5 rounded-lg shadow-2xl shadow-pink-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-white-500">
                         <div>
                             <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Qual a importância da
                                 doação de leite ?</h2>
