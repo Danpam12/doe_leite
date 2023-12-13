@@ -14,7 +14,7 @@
 
 <body>
     <div id="app" style="background-color: white;">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm,">
             <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
                 <a href="{{route('home')}}">
                     <img src="/img/logo.jpg" style="height:100px">
@@ -38,9 +38,9 @@
                                     </form>
                                 </div>
                             </li>
-                            
+
                             @canany(['create-role', 'edit-role', 'delete-role','show-user'])
-                            <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
+                                <a class="nav-link" href="{{ route('roles.index') }}" style="margin-right: 70px; padding: 10px; color: black;">Gerenciar Perfil</a>
                             @endcanany
 
                             @canany(['create-user', 'edit-user', 'delete-user','show-user'])
@@ -74,9 +74,9 @@
         @yield('content')
 
     </div>
-   
+
 </body>
-<footer class="bg-gray-800 text-white p-4 text-center">
+<footer class="bg-white-800 text-white p-4 text-center">
     <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgba(240, 140, 210, 0.7); padding: 0px; text-align: center; z-index: 2;">
     <div class="navbar navbar-expand-md navbar-light bg-color shadow-sm">
         <div style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 1;">

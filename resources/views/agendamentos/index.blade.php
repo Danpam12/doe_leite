@@ -2,13 +2,31 @@
 
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+    @media (max-width: 767px) {
+        .carousel {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            scroll-snap-align: start;
+       }
+    }
+</style>
 <div class="card p-1 m-2 md:m-8">
                <div class="card-header  text-white rounded-xl" style="background-color: #e24ab4">Lista de Agendamentos</div>
             <div class="card-body rounded-xl">
                 @can('create-agendamento')
                     <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-lx my-2 font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
                 @endcan
-                <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
+                <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto carousel flex-wrap divide-y divide-gray-300 w-full">
                     <thead>
                         <tr>
                             <!--<th scope="col">S#</th>-->
