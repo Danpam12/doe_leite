@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <div class="row justify-content-center">
     <div class="col-md-8">
 
-        <div class="card">
+        <div class="card p-1 m-2 md:m-8">
             <div class="card-header" style="background-color: #e24ab4">
                 <div class="float-start" style="color: white">
                     Adicionar Novo Agendamento
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('agendamentos.index') }}" class="btn btn-primary btn-sm"style="background-color: white; color: black">&larr; Voltar</a>
+                    <a href="{{ route('agendamentos.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-pink-200">
                 <form action="{{ route('agendamentos.store') }}" method="post">
                     @csrf
 
@@ -160,11 +161,11 @@
                             <input type="submit" class="btn btn-primary" style="background-color: #e24ab4" value="Adicionar Agendamento">
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection

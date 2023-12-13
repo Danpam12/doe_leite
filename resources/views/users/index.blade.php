@@ -23,7 +23,7 @@
             <tbody>
                 @forelse ($users as $user)
                 <tr class="border border-slate-600 rounded-xl">
-                    <th scope="row" class="border border-slate-700 rounded-xl">{{ $loop->iteration }}</th>
+                    <th scope="row" class="border border-slate-700 rounded-xl" style="color: rebeccapurple">{{ $loop->iteration }}</th>
                     <td class="border border-slate-700 rounded-xl">{{ $user->name }}</td>
                     <td class="border border-slate-700 rounded-xl">{{ $user->email }}</td>
                     <td class="border border-slate-700 rounded-xl">
