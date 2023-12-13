@@ -32,7 +32,7 @@ class StoreAgendamentoRequest extends FormRequest
             'email' => 'required|email',
             'endereco' => 'required|string',
             'quantidade' => 'integer|min:1|between:1,10000',    
-            'status' => 'required|in:Pendente,Aceito,Cancelado,Concluido',  
+            //'status' => 'required|in:Pendente,Aceito,Cancelado,Concluido',  
         ];
     }
 }
