@@ -22,15 +22,19 @@ class RoleSeeder extends Seeder
             'create-user',
             'edit-user',
             'delete-user',
+            'show-user',
             'create-ponto-coleta',
             'edit-ponto-coleta',
             'delete-ponto-coleta',
+            'show-ponto-coleta',
             'create-agendamento',
             'edit-agendamento',
             'delete-agendamento',
+            'show-agendamento',
             'create-cad-doadora',
             'edit-cad-doadora',
-            'delete-cad-doadora'
+            'delete-cad-doadora',
+            'show-cad-doadora'
         ]);
 
         

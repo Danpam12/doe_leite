@@ -1,23 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <div class="row justify-content-center">
     <div class="col-md-8">
 
-        <div class="card">
-            <div class="card-header">
-                <div class="float-start">
+        <div class="card p-1 m-2 md:m-8">
+            <div class="card-header" style="background-color: #e24ab4">
+                <div class="float-start" style="color:white">
                     Editar Nova Doadora
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
-                <form action="{{ route('cad_doadoras.store', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
+            <div class="card-body bg-pink-200">
+
+                <form action="{{ route('cad_doadoras.update', $cad_doadora->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
 
+                    @method("PUT")
 
                     <div class="mb-3 row">
                         <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
@@ -132,18 +135,47 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="exames" class="col-md-4 col-form-label text-md-end text-start">Exames</label>
+                        <label for="vdrls" class="col-md-4 col-form-label text-md-end text-start">Vdrls</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('exames') is-invalid @enderror" id="exames" name="exames">
-                                <option value="vdrl"{{ $cad_doadora->exames == 'vdrl' ? 'selected' : '' }}>vdrl</option>
-                                <option value="hbsag"{{ $cad_doadora->exames == 'hbsag' ? 'selected' : '' }}>hbsag</option>
-                                <option value="hiv"{{ $cad_doadora->exames == 'hiv' ? 'selected' : '' }}>hiv</option>
+                        <select class="form-control @error('vdrls') is-invalid @enderror" id="vdrls" name="vdrls">
+                                <option value="vdrl"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
+
                             </select>
-                            @error('exames')
-                                <span class="text-danger">{{ $exames}}</span>
+                            @error('vdrls')
+                                <span class="text-danger">{{ $vdrls}}</span>
                             @enderror
                         </div>
                     </div>
+
+                    <div class="mb-3 row">
+                        <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start">Hbsag</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
+                                <option value="vdrl"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
+
+                            </select>
+                            @error('hbsag')
+                                <span class="text-danger">{{ $hbsag}}</span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="hiv" class="col-md-4 col-form-label text-md-end text-start">Hiv</label>
+                        <div class="col-md-6">
+                        <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
+                                <option value="vdrl"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="hbsag"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
+
+                            </select>
+                            @error('hiv')
+                                <span class="text-danger">{{ $hiv}}</span>
+                            @enderror
+                        </div>
+                    </div>
+
 
                     <div class="mb-3 row">
                         <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>
@@ -159,7 +191,7 @@
 
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
-                            <input type="submit" class="btn btn-primary" value="Atualizar Doadora">
+                            <input type="submit" class="btn btn-primary" value="Atualizar Doadora"  style="background-color: #e24ab4">
                         </div>
                     </div>
 

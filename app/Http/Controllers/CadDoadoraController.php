@@ -9,15 +9,17 @@ use App\Models\Cad_doadora;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
+
 class CadDoadoraController extends Controller
 {
 
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:create-cad-doadora|edit-cad-doadora|delete-cad-doadora', ['only' => ['index','show']]);
+       $this->middleware('permission:create-cad-doadora|edit-cad-doadora|delete-cad-doadora|show-cad-doadora', ['only' => ['index','show']]);
        $this->middleware('permission:create-cad-doadora', ['only' => ['create','store']]);
        $this->middleware('permission:edit-cad-doadora', ['only' => ['edit','update']]);
+       $this->middleware('permission:show-cad-doadora', ['only' => ['show']]);
        $this->middleware('permission:delete-cad-doadora', ['only' => ['destroy']]);
     }
     /**
@@ -27,6 +29,7 @@ class CadDoadoraController extends Controller
     {
         return view('cad_doadoras.index', [
             'cad_doadoras' => Cad_doadora::latest()->paginate(3)
+            
         ]);
     }
 
@@ -48,12 +51,11 @@ class CadDoadoraController extends Controller
         Cad_doadora::create($request->all());
         return redirect()->route('cad_doadoras.index')
                 ->withSuccess(' Doadora foi adicionada com sucesso!');
-
+   
 
                 //File Upload
         if($request->hasFile('file') && $request->file('file')->isValid()) {
             
-
             $requestFile = $request->file;
 
             $extension = $requestFile->extension();
@@ -66,7 +68,7 @@ class CadDoadoraController extends Controller
         
         }
             $cad_doadora->save();
-
+ 
             return redirect()->route('cad_doadoras.index')->with('msg', 'criado com sucesso');
 
         
@@ -87,10 +89,13 @@ class CadDoadoraController extends Controller
      */
     public function edit(Cad_doadora $cad_doadora)
     {
-        return view('cad_doadoras.edit', [
-            'cad_doadora' => $cad_doadora
-        ]);
+       return view('cad_doadoras.edit', compact ('cad_doadora')
+        );
+
     }
+   
+
+    
 
     /**
      * Update the specified resource in storage.
@@ -120,6 +125,7 @@ class CadDoadoraController extends Controller
                 $cad_doadora->file = $fileName;
             }
     }
+
 
     /**
      * Remove the specified resource from storage.

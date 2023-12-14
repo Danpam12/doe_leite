@@ -23,7 +23,9 @@ return new class extends Migration
             $table->enum('tabagismo', ['sim', 'nao']);
             $table->enum('etilismo', ['sim', 'nao']);
             $table->enum('drogas', ['sim', 'nao']);
-            $table->enum('exames', ['vdrl', 'hbsag', 'hiv']);
+            $table->enum('vdrl', ['sim', 'nao']);
+            $table->enum('hbsag', ['sim', 'nao']);
+            $table->enum('hiv', ['sim', 'nao']);
             $table->string('file')->nullable();
             $table->timestamps();
         });

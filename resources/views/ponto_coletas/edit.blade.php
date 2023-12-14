@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <div class="row justify-content-center">
     <div class="col-md-8">
 
-        <div class="card">
-            <div class="card-header">
-                <div class="float-start">
+        <div class="card p-1 m-2 md:m-8">
+            <div class="card-header" style="background-color: #e24ab4">
+                <div class="float-start" style="color:white">
                     Editar Ponto de Coleta
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm">&larr; Voltar</a>
+                    <a href="{{ route('ponto_coletas.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body">
+            <div class="card-body bg-pink-200">
                 <form action="{{ route('ponto_coletas.update', $ponto_coleta->id) }}" method="post">
                     @csrf
                     @method("PUT")
@@ -58,15 +59,15 @@
                             @endif
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
-                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Atualizar">
+                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" style="background-color: #e24ab4" value="Atualizar">
                     </div>
-                    
+
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection

@@ -17,9 +17,10 @@ class AgendamentoController extends Controller
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:create-agendamento|edit-agendamento|delete-agendamento', ['only' => ['index','show']]);
+       $this->middleware('permission:create-agendamento|edit-agendamento|delete-agendamento|show-agendamento', ['only' => ['index','show']]);
        $this->middleware('permission:create-agendamento', ['only' => ['create','store']]);
        $this->middleware('permission:edit-agendamento', ['only' => ['edit','update']]);
+       $this->middleware('permission:show-agendamento', ['only' => ['show']]);
        $this->middleware('permission:delete-agendamento', ['only' => ['destroy']]);
     }
 

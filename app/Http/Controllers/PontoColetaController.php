@@ -14,9 +14,10 @@ class PontoColetaController extends Controller
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:create-ponto-coleta|edit-ponto-coleta|delete-ponto-coleta', ['only' => ['index','show']]);
+       $this->middleware('permission:create-ponto-coleta|edit-ponto-coleta|delete-ponto-coleta|show-ponto-coleta', ['only' => ['index','show']]);
        $this->middleware('permission:create-ponto-coleta', ['only' => ['create','store']]);
        $this->middleware('permission:edit-ponto-coleta', ['only' => ['edit','update']]);
+       $this->middleware('permission:show-ponto-coleta', ['only' => ['show']]);
        $this->middleware('permission:delete-ponto-coleta', ['only' => ['destroy']]);
     }
     /**

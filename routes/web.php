@@ -29,6 +29,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
+
+
+
+
 Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
@@ -36,3 +40,4 @@ Route::resources([
     'agendamentos' => AgendamentoController::class,
     'cad_doadoras' => CadDoadoraController::class
 ]);
+

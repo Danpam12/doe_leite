@@ -13,19 +13,21 @@
             <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto">
                 <thead class="table-white" style="color: #e24ab4">
                     <tr>
-                        <th scope="col" class="border border-slate-600 rounded-xl">ID</th>
-                        <th scope="col" class="border border-slate-600 rounded-xl">Nome</th>
-                        <th scope="col" class="border border-slate-600 rounded-xl">Email</th>
-                        <th scope="col" class="border border-slate-600 rounded-xl">Perfis</th>
-                        <th scope="col" class="border border-slate-600 rounded-xl">Ação</th>
+                        <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4">ID</th>
+                        <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4">Nome</th>
+                        <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4">Email</th>
+                        <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4">Perfis</th>
+                        <th scope="col" class="border border-slate-600 rounded-xl" style="color: #e24ab4">Ação</th>
                     </tr>
                 </thead>
             <tbody>
                 @forelse ($users as $user)
-                <tr class="border border-slate-600 rounded-xl">
-                    <th scope="row" class="border border-slate-700 rounded-xl">{{ $loop->iteration }}</th>
-                    <td class="border border-slate-700 rounded-xl">{{ $user->name }}</td>
-                    <td class="border border-slate-700 rounded-xl">{{ $user->email }}</td>
+
+                <tr class="border border-slate-600 rounded-xl" style="color: #e24ab4">
+                    <th scope="row" class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $loop->iteration }}</th>
+                    <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $user->name }}</td>
+                    <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $user->email }}</td>
+
                     <td class="border border-slate-700 rounded-xl">
                         @forelse ($user->getRoleNames() as $role)
                             <span class="badge bg-primary rounded-xl">{{ $role }}</span>
@@ -41,7 +43,7 @@
 
                             @if (in_array('Super Admin', $user->getRoleNames()->toArray() ?? []) )
                                 @if (Auth::user()->hasRole('Super Admin'))
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endif
                             @else
                                 @can('edit-user')
