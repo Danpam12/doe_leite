@@ -14,21 +14,21 @@
                 </div>
             </div>
             <div class="card-body bg-pink-200">
-                    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
                     <div class="mb-3 row">
                         <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Nome:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->name }}
                         </div>
                     </div>
-                    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
                     <div class="mb-3 row">
                         <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->email }}
                         </div>
                     </div>
-                    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
                     <div class="mb-3 row">
                         <label for="roles" class="col-md-4 col-form-label text-md-end text-start"><strong>Perfil:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
@@ -38,7 +38,7 @@
                             @endforelse
                         </div>
                     </div>
-                    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    
             </div>
         </div>
     </div>

@@ -34,7 +34,7 @@
 <body>
 
 
-    <div class="form" style=" background-color: rgba(240, 140, 210, 0.7); 
+    <div class="form" style=" background-color: rgba(240, 140, 210, 0.7);
     border-radius: 8px;
     padding: 20px;
     width: 300px;
@@ -47,19 +47,19 @@
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: #000000;">
             <input type="password" name="password" placeholder="Sua Senha" required style=" margin-bottom: 10px;
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: #000000;">
             <button type="submit" style="padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #e24ab4; 
-    color: #ffffff; 
+    background-color: #e24ab4;
+    color: #ffffff;
     cursor: pointer;">Entrar</button>
         </form>
 
@@ -71,10 +71,10 @@
             @endif
 
         </div>
-        
+
     </div>
-    
-  
+
+
 
 </body>
 <footer class="bg-gray-800 text-white p-4 text-center">
