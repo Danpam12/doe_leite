@@ -21,9 +21,9 @@
                     @method("PUT")
 
                     <div class="mb-3 row">
-                        <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
+                        <label for="nome" class="col-md-4 col-form-label text-md-end text-start" style="color: #e24ab4">Nome</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ $ponto_coleta->nome }}">
+                          <input type="text" class="form-control @error('nome') is-invalid @enderror" style="color: #e24ab4"id="nome" name="nome" value="{{ $ponto_coleta->nome }}">
                             @if ($errors->has('nome'))
                                 <span class="text-danger">{{ $errors->first('nome') }}</span>
                             @endif
@@ -31,9 +31,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Email</label>
                         <div class="col-md-6">
-                          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $ponto_coleta->email }}">
+                          <input type="email" class="form-control @error('email') is-invalid @enderror"style="color: #e24ab4" id="email" name="email" value="{{ $ponto_coleta->email }}">
                             @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
@@ -41,19 +41,19 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="fone" class="col-md-4 col-form-label text-md-end text-start">Fone</label>
-                        <div class="col-md-6">
-                          <input type="text" class="form-control @error('fone') is-invalid @enderror" id="fone" name="fone" value="{{ $ponto_coleta->fone}}">
+                        <label for="fone" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Fone</label>
+                        <div class="col-md-6 ">
+                          <input type="text" class="form-control @error('fone') is-invalid @enderror" style="color: #e24ab4"id="fone" name="fone" value="{{ $ponto_coleta->fone}}">
                             @if ($errors->has('fone'))
-                                <span class="text-danger">{{ $errors->first('fone') }}</span>
+                                <span class="text-danger ">{{ $errors->first('fone') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
+                        <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Endereço</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $ponto_coleta->endereco }}">
+                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" style="color: #e24ab4"id="endereco" name="endereco" value="{{ $ponto_coleta->endereco }}">
                             @if ($errors->has('endereco'))
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
                             @endif

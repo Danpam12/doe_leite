@@ -20,7 +20,7 @@
                     @csrf
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Nome</label>
                         <div class="col-md-6">
                           <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
                             @if ($errors->has('name'))
@@ -30,11 +30,11 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="permissions" class="col-md-4 col-form-label text-md-end text-start">Permissões</label>
+                        <label for="permissions" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Permissões</label>
                         <div class="col-md-6">
                             <select class="form-select @error('permissions') is-invalid @enderror" multiple aria-label="Permissions" id="permissions" name="permissions[]" style="height: 210px;">
                                 @forelse ($permissions as $permission)
-                                    <option value="{{ $permission->id }}" {{ in_array($permission->id, old('permissions') ?? []) ? 'selected' : '' }}>
+                                    <option value="{{ $permission->id }}"style="color: #e24ab4" {{ in_array($permission->id, old('permissions') ?? []) ? 'selected' : '' }}>
                                         {{ $permission->name }}
                                     </option>
                                 @empty
@@ -42,7 +42,7 @@
                                 @endforelse
                             </select>
                             @if ($errors->has('permissions'))
-                                <span class="text-danger">{{ $errors->first('permissions') }}</span>
+                                <span class="text-danger"style="color: #e24ab4">{{ $errors->first('permissions') }}</span>
                             @endif
                         </div>
                     </div>

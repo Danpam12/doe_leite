@@ -50,24 +50,24 @@
                             @if(!request()->is('home'))
 
                             @canany(['create-role', 'edit-role', 'delete-role','show-user'])
-                            <a class="nav-link " href="{{ route('roles.index') }}" style="margin-right:80px; color: #e24ab4;">Perfil    </a>
+                            <a class="nav-link " href="{{ route('roles.index') }}" style="b;margin-right:80px; color: #e24ab4;"> <span style="font-weight: bold; font-size: 1.2em;">Perfil</span>  </a>
 
                             @endcanany
 
                             @canany(['create-user', 'edit-user', 'delete-user','show-user'])
-                                <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px;   color: #e24ab4;">Usuário</a>
+                                <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px;   color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Usuários</span></a>
                             @endcanany
 
                             @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta', 'show-ponto-coleta'])
-                                <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 70px;color: #e24ab4;">Ponto de Coleta</a>
+                                <a class="nav-link" href="{{ route('ponto_coletas.index') }}" style="margin-right: 70px;color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Ponto de coleta</span></a>
                             @endcanany
 
                             @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento', 'show-agendamento'])
-                                <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 70px; padding: 10px; color: #e24ab4;">Agendamentos</a>
+                                <a class="nav-link" href="{{ route('agendamentos.index') }}" style="margin-right: 70px; padding: 10px; color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Agendamentos</span></a>
                             @endcanany
 
                             @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
-                                <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right:150px;   color: #e24ab4;">Doadoras</a>
+                                <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right:150px;   color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Doadoras</span></a>
                             @endcanany
                             @endif
 

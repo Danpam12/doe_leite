@@ -21,7 +21,7 @@
                     @method("PUT")
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Nome</label>
                         <div class="col-md-6">
                           <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $role->name }}">
                             @if ($errors->has('name'))
@@ -31,11 +31,11 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="permissions" class="col-md-4 col-form-label text-md-end text-start">Permissôes</label>
+                        <label for="permissions" class="col-md-4 col-form-label text-md-end text-start" style="color: #e24ab4">Permissôes</label>
                         <div class="col-md-6">
                             <select class="form-select @error('permissions') is-invalid @enderror" multiple aria-label="Permissions" id="permissions" name="permissions[]" style="height: 210px;">
                                 @forelse ($permissions as $permission)
-                                    <option value="{{ $permission->id }}" {{ in_array($permission->id, $rolePermissions ?? []) ? 'selected' : '' }}>
+                                    <option value="{{ $permission->id }}" style="color: #e24ab4" {{ in_array($permission->id, $rolePermissions ?? []) ? 'selected' : '' }}>
                                         {{ $permission->name }}
                                     </option>
                                 @empty

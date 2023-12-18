@@ -20,19 +20,19 @@
                     @method("PUT")
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Nome</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $user->name }}">
+                          <input type="text" class="form-control @error('name') is-invalid @enderror" style="color: #e24ab4"id="name" name="name" value="{{ $user->name }}">
                             @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                <span class="text-danger" style="color: #e24ab4">{{ $errors->first('name') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Email</label>
                         <div class="col-md-6">
-                          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $user->email }}">
+                          <input type="email" class="form-control @error('email') is-invalid @enderror" style="color: #e24ab4" id="email" name="email" value="{{ $user->email }}">
                             @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="password" class="col-md-4 col-form-label text-md-end text-start">Senha</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Senha</label>
                         <div class="col-md-6">
                           <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
                             @if ($errors->has('password'))
@@ -50,25 +50,25 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="password_confirmation" class="col-md-4 col-form-label text-md-end text-start">Confirmar Senha</label>
+                        <label for="password_confirmation" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Confirmar Senha</label>
                         <div class="col-md-6">
                           <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="roles" class="col-md-4 col-form-label text-md-end text-start">Perfil</label>
+                        <label for="roles" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Perfil</label>
                         <div class="col-md-6">
                             <select class="form-select @error('roles') is-invalid @enderror" multiple aria-label="Roles" id="roles" name="roles[]">
                                 @forelse ($roles as $role)
 
                                     @if ($role!='Super Admin')
-                                    <option value="{{ $role }}" {{ in_array($role, $userRoles ?? []) ? 'selected' : '' }}>
+                                    <option value="{{ $role }}" style="color: #e24ab4"{{ in_array($role, $userRoles ?? []) ? 'selected' : '' }}>
                                         {{ $role }}
                                     </option>
                                     @else
                                         @if (Auth::user()->hasRole('Super Admin'))
-                                        <option value="{{ $role }}" {{ in_array($role, $userRoles ?? []) ? 'selected' : '' }}>
+                                        <option value="{{ $role }}" style="color: #e24ab4"{{ in_array($role, $userRoles ?? []) ? 'selected' : '' }}>
                                             {{ $role }}
                                         </option>
                                         @endif
