@@ -17,20 +17,20 @@
             <div class="card-body bg-pink-200">
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Nome:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start" style="color: #e24ab4"><strong>Nome:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;" style="color: #e24ab4">
                             {{ $role->name }}
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="roles" class="col-md-4 col-form-label text-md-end text-start" ><strong>Permissões:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;" >
+                        <label for="roles" class="col-md-4 col-form-label text-md-end text-start" style="color: #e24ab4"><strong>Permissões:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color: #e24ab4" >
                             @if ($role->name=='Super Admin')
-                                <span class="badge bg-primary" >All</span>
+                                <span class="badge bg-white"style="color: #e24ab4" >All</span>
                             @else
                                 @forelse ($rolePermissions as $permission)
-                                    <span class="badge bg-primary" >{{ $permission->name }}</span>
+                                    <span class="badge bg-white" style="color: #e24ab4">{{ $permission->name }}</span>
                                 @empty
                                 @endforelse
                             @endif

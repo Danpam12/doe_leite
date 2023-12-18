@@ -18,29 +18,29 @@
             <div class="card-body bg-pink-200">
 
                     <div class="row">
-                        <label for="nome" class="col-md-6 col-form-label text-md-end text-start"><strong>Nome:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
+                        <label for="nome" class="col-md-6 col-form-label text-md-end text-start" style="color: #e24ab4"><strong>Nome:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
                             {{ $ponto_coleta->nome }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="email" class="col-md-6 col-form-label text-md-end text-start"><strong>Email:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
+                        <label for="email" class="col-md-6 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Email:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
                             {{ $ponto_coleta->email }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="fone" class="col-md-6 col-form-label text-md-end text-start"><strong>Fone:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
+                        <label for="fone" class="col-md-6 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Fone:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
                             {{ $ponto_coleta->fone }}
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="endereco" class="col-md-6 col-form-label text-md-end text-start"><strong>Endereço:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
+                        <label for="endereco" class="col-md-6 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Endereço:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
                             {{ $ponto_coleta->endereco }}
                         </div>
                     </div>
