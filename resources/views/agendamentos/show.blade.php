@@ -18,78 +18,78 @@
             <div class="card-body bg-pink-200">
 
                 <div class="row">
-                    <label for="ponto_coleta" class="col-md-4 col-form-label text-md-end text-start"><strong>Ponto de Coleta:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="ponto_coleta" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Ponto de Coleta:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->pontoColeta->nome }} <!-- Considerando que você tenha um relacionamento definido para acessar o nome do ponto de coleta -->
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="data" class="col-md-4 col-form-label text-md-end text-start"><strong>Data:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="data" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Data:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->data }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="hora" class="col-md-4 col-form-label text-md-end text-start"><strong>Hora:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="hora" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Hora:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->hora }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="tipo_coleta" class="col-md-4 col-form-label text-md-end text-start"><strong>Tipo de Coleta:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="tipo_coleta" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Tipo de Coleta:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->tipo_coleta }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="nome" class="col-md-4 col-form-label text-md-end text-start"><strong>Nome:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="nome" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Nome:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->nome }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="cpf" class="col-md-4 col-form-label text-md-end text-start"><strong>CPF:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="cpf" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>CPF:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->cpf }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="telefone" class="col-md-4 col-form-label text-md-end text-start"><strong>Telefone:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="telefone" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Telefone:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->telefone }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="email" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Email:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->email }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"><strong>Endereço:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Endereço:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->endereco }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="quantidade" class="col-md-4 col-form-label text-md-end text-start"><strong>Quantidade:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="quantidade" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Quantidade:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->quantidade }} <strong>ml</strong>
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="status" class="col-md-4 col-form-label text-md-end text-start"><strong>Status:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="status" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Status:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $agendamento->status }}
                     </div>
                 </div>

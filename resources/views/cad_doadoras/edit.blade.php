@@ -22,9 +22,9 @@
                     @method("PUT")
 
                     <div class="mb-3 row">
-                        <label for="nome" class="col-md-4 col-form-label text-md-end text-start">Nome</label>
+                        <label for="nome" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Nome</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ $cad_doadora->nome }}">
+                          <input type="text" class="form-control @error('nome') is-invalid @enderror"style="color: #e24ab4" id="nome" name="nome" value="{{ $cad_doadora->nome }}">
                             @error('nome')
                                 <span class="text-danger">{{ 'nome' }}</span>
                             @enderror
@@ -32,9 +32,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start">Nascimento</label>
+                        <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Nascimento</label>
                         <div class="col-md-6">
-                          <input type="date" class="form-control @error('data_nasc') is-invalid @enderror" id="data_nasc" name="data_nasc" value="{{ $cad_doadora->data_nasc }}">
+                          <input type="date" class="form-control @error('data_nasc') is-invalid @enderror"style="color: #e24ab4" id="data_nasc" name="data_nasc" value="{{ $cad_doadora->data_nasc }}">
                             @error('data_nasc')
                                 <span class="text-danger">{{ 'data_nasc' }}</span>
                             @enderror
@@ -42,9 +42,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="endereco" class="col-md-4 col-form-label text-md-end text-start">Endereço</label>
+                        <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Endereço</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
+                          <input type="text" class="form-control @error('endereco') is-invalid @enderror" style="color: #e24ab4"id="endereco" name="endereco" value="{{ $cad_doadora->endereco }}">
                             @error('endereco')
                                 <span class="text-danger">{{ $errors->first('endereco') }}</span>
                             @endif
@@ -52,9 +52,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="fone" class="col-md-4 col-form-label text-md-end text-start">Fone</label>
+                        <label for="fone" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Fone</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control @error('fone') is-invalid @enderror" id="fone" name="fone" value="{{ $cad_doadora->fone }}">
+                            <input type="text" class="form-control @error('fone') is-invalid @enderror" style="color: #e24ab4" id="fone" name="fone" value="{{ $cad_doadora->fone }}">
                             @error('fone')
                                 <span class="text-danger">{{ $fone }}</span>
                             @enderror
@@ -62,9 +62,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email</label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Email</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $cad_doadora->email }}">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" style="color: #e24ab4"id="email" name="email" value="{{ $cad_doadora->email }}">
                             @error('email')
                                 <span class="text-danger">{{ $email }}</span>
                             @enderror
@@ -72,9 +72,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="pre_nat" class="col-md-4 col-form-label text-md-end text-start">Pré-natal</label>
+                        <label for="pre_nat" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Pré-natal</label>
                         <div class="col-md-6">
-                            <select class="form-control @error('pre_nat') is-invalid @enderror" id="pre_nat" name="pre_nat">
+                            <select class="form-control @error('pre_nat') is-invalid @enderror" style="color: #e24ab4" id="pre_nat" name="pre_nat">
                                 <option value="sim" {{ $cad_doadora->pre_nat == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="nao"{{ $cad_doadora->pre_nat == 'nao' ? 'selected' : '' }}>Não</option>
                             </select>
@@ -85,9 +85,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start">Data do Parto</label>
+                        <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Data do Parto</label>
                         <div class="col-md-6">
-                          <input type="date" class="form-control @error('data_parto') is-invalid @enderror" id="data_parto" name="data_parto" value="{{ $cad_doadora->data_parto }}">
+                          <input type="date" class="form-control @error('data_parto') is-invalid @enderror" style="color: #e24ab4"id="data_parto" name="data_parto" value="{{ $cad_doadora->data_parto }}">
                             @error('data_parto')
                                 <span class="text-danger">{{ $errors->first('data_parto') }}</span>
                             @enderror
@@ -95,9 +95,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="tabagismo" class="col-md-4 col-form-label text-md-end text-start">Tabagismo</label>
+                        <label for="tabagismo" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Tabagismo</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('tabagismo') is-invalid @enderror" id="tabagismo" name="tabagismo">
+                        <select class="form-control @error('tabagismo') is-invalid @enderror" style="color: #e24ab4"id="tabagismo" name="tabagismo">
                                 <option value="sim"{{ $cad_doadora->tabagismo == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="nao"{{ $cad_doadora->tabagismo == 'nao' ? 'selected' : '' }}>Não</option>
                             </select>
@@ -108,9 +108,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="etilismo" class="col-md-4 col-form-label text-md-end text-start">Etilismo</label>
+                        <label for="etilismo" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Etilismo</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('etilismo') is-invalid @enderror" id="etilismo" name="etilismo">
+                        <select class="form-control @error('etilismo') is-invalid @enderror" style="color: #e24ab4"id="etilismo" name="etilismo">
                                 <option value="sim"{{ $cad_doadora->etilismo == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="nao"{{ $cad_doadora->etilismo == 'nao' ? 'selected' : '' }}>Não</option>
                             </select>
@@ -121,9 +121,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="drogas" class="col-md-4 col-form-label text-md-end text-start">Drogas</label>
+                        <label for="drogas" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Drogas</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('drogas') is-invalid @enderror" id="drogas" name="drogas">
+                        <select class="form-control @error('drogas') is-invalid @enderror" style="color: #e24ab4"id="drogas" name="drogas">
                                 <option value="sim"{{ $cad_doadora->drogas == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="nao"{{ $cad_doadora->drogas == 'nao' ? 'selected' : '' }}>Não</option>
                             </select>
@@ -134,9 +134,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="vdrls" class="col-md-4 col-form-label text-md-end text-start">Vdrls</label>
+                        <label for="vdrls" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Vdrls</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('vdrls') is-invalid @enderror" id="vdrls" name="vdrls">
+                        <select class="form-control @error('vdrls') is-invalid @enderror"style="color: #e24ab4" id="vdrls" name="vdrls">
                                 <option value="vdrl"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
 
@@ -148,9 +148,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start">Hbsag</label>
+                        <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Hbsag</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
+                        <select class="form-control @error('hbsag') is-invalid @enderror"style="color: #e24ab4" id="hbsag" name="hbsag">
                                 <option value="vdrl"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
 
@@ -162,9 +162,9 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="hiv" class="col-md-4 col-form-label text-md-end text-start">Hiv</label>
+                        <label for="hiv" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Hiv</label>
                         <div class="col-md-6">
-                        <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
+                        <select class="form-control @error('hiv') is-invalid @enderror"style="color: #e24ab4" id="hiv" name="hiv">
                                 <option value="vdrl"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
                                 <option value="hbsag"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
 
@@ -177,13 +177,13 @@
 
 
                     <div class="mb-3 row">
-                        <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>
+                        <label for="file" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Aquivos</label>
                         <div class="col-md-6">
-                        <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
-                        <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
+                        <input type="file" class="form-control @error('file') is-invalid @enderror" style="color: #e24ab4"id="file" name="file" value="{{ $cad_doadora->file }}">
+                        <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror"style="color: #e24ab4">{{$cad_doadora->file}}</textarea>
 
                             @error('file')
-                                <span class="text-danger">{{ $file }}</span>
+                                <span class="text-danger"style="color: #e24ab4">{{ $file }}</span>
                             @enderror
                         </div>
                     </div>
