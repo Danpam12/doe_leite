@@ -26,8 +26,8 @@
                 @can('create-agendamento')
                     <a href="{{ route('agendamentos.create') }}" class="btn btn-success btn-lx my-2 font-semibold text-slate-900" style="background-color: #e24ab4"><i class="bi bi-plus-circle"></i> Adicionar novo agendamento</a>
                 @endcan
-                <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto carousel flex-wrap divide-y divide-gray-300 w-full">
-                    <thead>
+                <table class="table table-striped table-bordered border-separate border border-slate-500 rounded-xl md:table-auto carousel flex-wrap divide-y divide-gray-300 w-full"style="color: #e24ab4">
+                <thead class="table-white" style="color: #e24ab4">
                         <tr>
                             <!--<th scope="col">S#</th>-->
                             <th scope="col" class="border border-slate-600 rounded-xl"style="color: #e24ab4">Ponto de Coleta</th>
@@ -50,19 +50,19 @@
                         @forelse ($agendamentos as $agendamento)
                         <tr class="border border-slate-600 rounded-xl" style="color: #e24ab4">
                                 <!--<th scope="row">{{ $loop->iteration }}</th>-->
-                                <td>{{ $agendamento->pontoColeta->nome }}</td>
-                                <td>{{ $agendamento->data }}</td>
-                                <td>{{ $agendamento->hora }}</td>
-                                <td>{{ $agendamento->tipo_coleta }}</td>
-                                <td>{{ $agendamento->nome }}</td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->pontoColeta->nome }} </td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->data }}</td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->hora }}</td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->tipo_coleta }}</td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->nome }}</td>
                                 <!--<td>{{ $agendamento->cpf }}</td>
                                 <td>{{ $agendamento->telefone }}</td>
                                 <td>{{ $agendamento->email }}</td>
                                 <td>{{ $agendamento->endereco }}</td>-->
                                 @can('create-role')
-                                    <td>{{ $agendamento->quantidade}} <strong>ml</strong></td>
+                                    <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->quantidade}} <strong>ml</strong></td>
                                 @endcan
-                                <td>{{ $agendamento->status}}</td>
+                                <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->status}}</td>
                                 <td>
                                     <form action="{{ route('agendamentos.destroy', $agendamento->id) }}" method="post">
                                         @csrf
