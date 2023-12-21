@@ -40,7 +40,7 @@
                         <div class="col-md-6">
                           <input type="date" class="form-control @error('data') is-invalid @enderror" style="color: #e24ab4"id="data" name="data" value="{{ old('data') }}">
                             @if ($errors->has('data'))
-                                <span class="text-danger">{{ $errors->first('data') }}</span>
+                                <span class="text-danger" >{{ $errors->first('data') }}</span>
                             @endif
                         </div>
                     </div>

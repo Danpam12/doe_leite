@@ -18,92 +18,92 @@
             <div class="card-body bg-pink-200">
                 
                 <div class="row">
-                    <label for="nome" class="col-md-4 col-form-label text-md-end text-start"><strong>Nome:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="nome" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Nome:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->nome }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start"><strong>Nascimento:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="data_nasc" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Nascimento:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->data_nasc }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"><strong>Endereço:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="endereco" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Endereço:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->endereco }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="fone" class="col-md-4 col-form-label text-md-end text-start"><strong>Fone:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="fone" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Fone:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->fone }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="email" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Email:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->email }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="pre_nat" class="col-md-4 col-form-label text-md-end text-start"><strong>Pré-natal:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="pre_nat" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Pré-natal:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->pre_nat}}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start"><strong>Data do Parto:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="data_parto" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Data do Parto:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->data_parto }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="tabagismo" class="col-md-4 col-form-label text-md-end text-start"><strong>Tabagismo:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="tabagismo" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Tabagismo:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->tabagismo }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="etilismo" class="col-md-4 col-form-label text-md-end text-start"><strong>Etilismo:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="etilismo" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Etilismo:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->etilismo }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="drogas" class="col-md-4 col-form-label text-md-end text-start"><strong>Drogas:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="drogas" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Drogas:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->drogas }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="vdrl" class="col-md-4 col-form-label text-md-end text-start"><strong>Vdrl:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="vdrl" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Vdrl:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->vdrl }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start"><strong>Hbsag:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Hbsag:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->hbsag }}
                     </div>
                 </div>
 
                 <div class="row">
-                    <label for="hiv" class="col-md-4 col-form-label text-md-end text-start"><strong>Hiv:</strong></label>
-                    <div class="col-md-6" style="line-height: 35px;">
+                    <label for="hiv" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Hiv:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
                         {{ $cad_doadora->hiv }}
                     </div>
                 </div>
