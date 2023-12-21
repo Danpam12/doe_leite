@@ -13,6 +13,8 @@ class Ponto_coleta extends Model
         'nome',
         'email',
         'fone',
-        'endereco'
+        'endereco',
+        'latitude',
+        'longitude'
     ];
 }

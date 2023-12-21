@@ -25,8 +25,9 @@ class PontoColetaController extends Controller
      */
     public function index()
     {
+
         return view('ponto_coletas.index', [
-            'ponto_coletas' => Ponto_coleta::latest()->paginate(3)
+            'ponto_coletas' => Ponto_coleta::latest()->paginate(30)
         ]);
     }
 
