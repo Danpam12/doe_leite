@@ -27,6 +27,7 @@ return new class extends Migration
             $table->enum('hbsag', ['sim', 'nao']);
             $table->enum('hiv', ['sim', 'nao']);
             $table->string('file')->nullable();
+            $table->enum('status', ['Pendente','Aceito', 'Negado']);
             $table->timestamps();
         });
     }

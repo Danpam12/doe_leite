@@ -137,8 +137,8 @@
                         <label for="vdrls" class="col-md-4 col-form-label text-md-end text-start">Vdrls</label>
                         <div class="col-md-6">
                         <select class="form-control @error('vdrls') is-invalid @enderror" id="vdrls" name="vdrls">
-                                <option value="vdrl"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
-                                <option value="hbsag"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
+                                <option value="sim"{{ $cad_doadora->vdrls == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="nao"{{ $cad_doadora->vdrls == 'nao' ? 'selected' : '' }}>Não</option>
 
                             </select>
                             @error('vdrls')
@@ -151,9 +151,8 @@
                         <label for="hbsag" class="col-md-4 col-form-label text-md-end text-start">Hbsag</label>
                         <div class="col-md-6">
                         <select class="form-control @error('hbsag') is-invalid @enderror" id="hbsag" name="hbsag">
-                                <option value="vdrl"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
-                                <option value="hbsag"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
-
+                                <option value="sim"{{ $cad_doadora->hbsag == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="nao"{{ $cad_doadora->hbsag == 'nao' ? 'selected' : '' }}>Não</option>
                             </select>
                             @error('hbsag')
                                 <span class="text-danger">{{ $hbsag}}</span>
@@ -165,8 +164,8 @@
                         <label for="hiv" class="col-md-4 col-form-label text-md-end text-start">Hiv</label>
                         <div class="col-md-6">
                         <select class="form-control @error('hiv') is-invalid @enderror" id="hiv" name="hiv">
-                                <option value="vdrl"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
-                                <option value="hbsag"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
+                                <option value="sim"{{ $cad_doadora->hiv == 'sim' ? 'selected' : '' }}>Sim</option>
+                                <option value="nao"{{ $cad_doadora->hiv == 'nao' ? 'selected' : '' }}>Não</option>
 
                             </select>
                             @error('hiv')
@@ -177,16 +176,31 @@
 
 
                     <div class="mb-3 row">
-                        <label for="file" class="col-md-4 col-form-label text-md-end text-start">Aquivos</label>
+                        <label for="file" class="col-md-4 col-form-label text-md-end text-start">Arquivos</label>
                         <div class="col-md-6">
                         <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $cad_doadora->file }}">
                         <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
-
                             @error('file')
                                 <span class="text-danger">{{ $file }}</span>
                             @enderror
                         </div>
                     </div>
+
+                    @can('create-role')
+                    <div class="mb-3 row">
+                        <label for="status" class="col-md-4 col-form-label text-md-end text-start">Status</label>
+                        <div class="col-md-6">
+                            <select class="form-control @error('status') is-invalid @enderror" id="status" name="status">
+                                <option value="Pendente" {{ $cad_doadora->status == 'Pendente' ? 'selected' : '' }}>Pendente</option>
+                                <option value="Aceito" {{ $cad_doadora->status == 'Aceito' ? 'selected' : '' }}>Aceito</option>
+                                <option value="Negado" {{ $cad_doadora->status == 'Negado' ? 'selected' : '' }}>Negado</option>
+                            </select>
+                            @error('status')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    @endcan
 
                     <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">

@@ -44,6 +44,20 @@
                             {{ $ponto_coleta->endereco }}
                         </div>
                     </div>
+
+                    <div class="row">
+                        <label for="latitude" class="col-md-6 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Latitude:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
+                            {{ $ponto_coleta->latitude }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="longitude" class="col-md-6 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Longitude:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;color:#e24ab4">
+                            {{ $ponto_coleta->longitude }}
+                        </div>
+                    </div>
                 
             </div>
         </div>

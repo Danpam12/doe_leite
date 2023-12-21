@@ -61,6 +61,26 @@
                     </div>
 
                     <div class="mb-3 row">
+                        <label for="latitude" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Latitude</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('latitude') is-invalid @enderror" style="color: #e24ab4"id="latitude" name="latitude" value="{{ $ponto_coleta->latitude }}">
+                            @if ($errors->has('latitude'))
+                                <span class="text-danger">{{ $errors->first('latitude') }}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="longitude" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4">Longitude</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('longitude') is-invalid @enderror" style="color: #e24ab4"id="longitude" name="longitude" value="{{ $ponto_coleta->longitude }}">
+                            @if ($errors->has('longitude'))
+                                <span class="text-danger">{{ $errors->first('longitude') }}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" style="background-color: #e24ab4" value="Atualizar">
                     </div>
 

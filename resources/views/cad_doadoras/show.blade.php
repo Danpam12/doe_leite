@@ -109,14 +109,19 @@
                 </div>
 
                 <div class="row">
-                        <label for="file" class="col-md-4 col-form-label text-md-end text-start"><strong>Aquivo:</strong></label>
+                        <label for="file" class="col-md-4 col-form-label text-md-end text-start"><strong>Arquivo:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
 
                         <textarea name="file" id="file" type="file" class="form-control @error('file') is-invalid @enderror">{{$cad_doadora->file}}</textarea>
+                </div>
 
-
-                        </div>
+                <div class="row">
+                    <label for="status" class="col-md-4 col-form-label text-md-end text-start"><strong>Status:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $cad_doadora->status }}
                     </div>
+                </div>
+                
 
                 <!-- Adicionar mais campos conforme necessário -->
 

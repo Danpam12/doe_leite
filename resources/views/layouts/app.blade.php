@@ -15,24 +15,20 @@
 <body>
     <div id="app" style="background-color: white;">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm,">
-            <div class="container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
+            <div class="py-1 container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
                 <a href="{{route('home')}}">
-                    <img src="/img/logo.jpg" style="height:100px">
+                    <img src="/img/logo.jpg" style="height:70px">
                 </a>
                 <main class="py-4">
                     <div class="navbar-nav ms-auto">
                         
                         @auth
                         
-                            <li class="nav-item dropdown" style="padding: 2px;  border-radius: 10px; background-color: #ffffff; color: #e24ab4; position: absolute; right: 6px;">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown " style="border-radius: 10px; background-color: #ffffff; color: #e24ab4; position: absolute; right: 10px;">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle pt-1 " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-                                <div class="container" >
-    
-
-
-
+                            
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                                     <!-- Adicione aqui qualquer outra opção de menu desejada -->
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -44,13 +40,14 @@
                                     </form>
                                 </div>
                             </li>
+                            
 
                           
 
                             @if(!request()->is('home'))
 
                             @canany(['create-role', 'edit-role', 'delete-role','show-user'])
-                            <a class="nav-link " href="{{ route('roles.index') }}" style="b;margin-right:80px; color: #e24ab4;"> <span style="font-weight: bold; font-size: 1.2em;">Perfil</span>  </a>
+                            <a class="nav-link " href="{{ route('roles.index') }}" style="b;margin-right:80px; color: #e24ab4;"> <span style="font-weight: bold; font-size: 120%;">Perfil</span>  </a>
 
                             @endcanany
 
@@ -69,6 +66,9 @@
                             @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
                                 <a class="nav-link" href="{{ route('cad_doadoras.index') }}" style="margin-right:150px;   color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Doadoras</span></a>
                             @endcanany
+                            @else
+                            
+                                
                             @endif
 
                         @endauth

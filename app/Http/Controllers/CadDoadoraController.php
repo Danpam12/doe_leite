@@ -89,8 +89,9 @@ class CadDoadoraController extends Controller
      */
     public function edit(Cad_doadora $cad_doadora)
     {
-       return view('cad_doadoras.edit', compact ('cad_doadora')
-        );
+       return view('cad_doadoras.edit', [
+        'cad_doadora' => $cad_doadora
+       ]);
 
     }
    

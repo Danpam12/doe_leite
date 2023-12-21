@@ -25,7 +25,9 @@ class StorePonto_coletaRequest extends FormRequest
             'nome'=> 'required|string|max:250',
             'email'=>'required|regex:/(.+)@(.+)\.(.+)/i|email|max:50',
             'fone'=> 'required|string|max:11',
-            'endereco'=> 'required|string|max:255'
+            'endereco'=> 'required|string|max:255',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
         ];
     }
 }

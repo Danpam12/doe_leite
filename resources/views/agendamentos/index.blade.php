@@ -60,7 +60,7 @@
                                 <td>{{ $agendamento->email }}</td>
                                 <td>{{ $agendamento->endereco }}</td>-->
                                 @can('create-role')
-                                    <td>{{ $agendamento->quantidade}} <strong>ml</strong></td>
+                                    <td> <p>{{ $agendamento->quantidade}} ml</p></td>
                                 @endcan
                                 <td>{{ $agendamento->status}}</td>
                                 <td>

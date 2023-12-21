@@ -35,7 +35,8 @@ class UpdateCad_doadoraRequest extends FormRequest
             'tabagismo'=> 'required|in:sim,nao',
             'etilismo'=> 'required|in:sim,nao',
             'drogas'=> 'required|in:sim,nao',
-            'file' => 'required'
+            'file' => 'required',
+            'status' => 'required|in:Pendente,Aceito,Negado',
         ];
     }
 }
