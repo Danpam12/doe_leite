@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +15,7 @@
 
 <body>
     <div id="app" style="background-color: white;">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm,">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm,">
             <div class="py-1 container-fluid" style="background-color: rgba(240, 140, 210, 0.7); ">
                 <a href="{{route('home')}}">
                     <img src="/img/logo.jpg" style="height:70px">
@@ -44,14 +45,14 @@
 
                           
 
-                            @if(!request()->is('home'))
+                            @if (!request()->is('home'))
 
-                            @canany(['create-role', 'edit-role', 'delete-role','show-user'])
+                            @canany(['create-role', 'edit-role', 'delete-role', 'show-user'])
                             <a class="nav-link " href="{{ route('roles.index') }}" style="b;margin-right:80px; color: #e24ab4;"> <span style="font-weight: bold; font-size: 120%;">Perfil</span>  </a>
 
                             @endcanany
 
-                            @canany(['create-user', 'edit-user', 'delete-user','show-user'])
+                            @canany(['create-user', 'edit-user', 'delete-user', 'show-user'])
                                 <a class="nav-link" href="{{ route('users.index') }}" style="margin-right: 70px;   color: #e24ab4;"><span style="font-weight: bold; font-size: 1.2em;">Usuários</span></a>
                             @endcanany
 
@@ -83,7 +84,79 @@
                     </div>
                 </main>
             </div>
+        </nav> --}}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-pink-200">
+            <div class="container-fluid">
+                <a href="{{ route('home') }}">
+                    <img src="/img/logo.jpg" style="height:70px">
+                </a>
+                
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav ">
+                        @auth
+                        @if (!request()->is('home'))
+
+                            @canany(['create-role', 'edit-role', 'delete-role', 'show-user'])
+                            <a href="{{ route('roles.index') }}" class="nav-link rounded-lg hover:bg-slate-100 hover:text-slate-900" style="margin-right: 80px; color: #e24ab4; font-size: 1.2rem; font-family: 'Arial', sans-serif;">
+                                <span class="font-medium px-3 py-2 text-slate-700">Perfil</span>
+                              </a>
+
+                            @endcanany
+
+                            @canany(['create-user', 'edit-user', 'delete-user', 'show-user'])
+                            <a href="{{ route('users.index') }}" class="nav-link rounded-lg hover:bg-slate-100 hover:text-slate-900" style="margin-right: 80px; color: #e24ab4; font-size: 1.2rem; font-family: 'Arial', sans-serif;">
+                                <span class="font-medium px-3 py-2 text-slate-700">Usuários</span>
+                              </a>
+                            @endcanany
+
+                            @canany(['create-ponto-coleta', 'edit-ponto-coleta', 'delete-ponto-coleta', 'show-ponto-coleta'])
+                            <a href="{{ route('ponto_coletas.index') }}" class="nav-link rounded-lg hover:bg-slate-100 hover:text-slate-900" style="margin-right: 80px; color: #e24ab4; font-size: 1.2rem; font-family: 'Arial', sans-serif;">
+                                <span class="font-medium px-3 py-2 text-slate-700">Ponto de Coleta</span>
+                              </a>
+                            @endcanany
+
+                            @canany(['create-agendamento', 'edit-agendamento', 'delete-agendamento', 'show-agendamento'])
+                            <a href="{{ route('agendamentos.index') }}" class="nav-link rounded-lg hover:bg-slate-100 hover:text-slate-900" style="margin-right: 80px; color: #e24ab4; font-size: 1.2rem; font-family: 'Arial', sans-serif;">
+                                <span class="font-medium px-3 py-2 text-slate-700">Agendamentos</span>
+                              </a>
+                            @endcanany
+
+                            @canany(['create-cad-doadora', 'edit-cad-doadora', 'delete-cad-doadora', 'show-cad-doadora'])
+                                <a href="{{ route('cad_doadoras.index') }}" class="nav-link rounded-lg hover:bg-slate-100 hover:text-slate-900" style="margin-right: 80px; color: #e24ab4; font-size: 1.2rem; font-family: 'Arial', sans-serif;">
+                                <span class="font-medium px-3 py-2 text-slate-700">Doadoras</span>
+                              </a>
+                            @endcanany
+                            @else
+                            
+                                
+                        @endif
+                        @endauth
+
+                        <li class="nav-item dropdown">
+                            <button class="btn dropdown-toggle " style="color: #97056b; font-size: 1.0rem; font-family: 'Arial', sans-serif;"data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </button>
+                            
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                                <!-- Adicione aqui qualquer outra opção de menu desejada -->
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{ __('Sair') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" >
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+        <div style="margin-top: 10px;">
+            <!-- Seu conteúdo aqui -->
+          </div>
 
         @yield('content')
 
@@ -91,22 +164,29 @@
 
 </body>
 <footer class="bg-white-800 text-white p-4 text-center">
-    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgba(240, 140, 210, 0.7); padding: 0px; text-align: center; z-index: 2;">
-    <div class="navbar navbar-expand-md navbar-light bg-color shadow-sm">
-        <div style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 1;">
-            <p style="color: black; margin: 0;">
-                Este site utiliza recursos do <a href="https://www.gov.br" target="_blank" style="cursor: pointer; color: white;">https://www.gov.br/</a>
-            </p>
+    <div
+        style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgba(240, 140, 210, 0.7); padding: 0px; text-align: center; z-index: 2;">
+        <div class="navbar navbar-expand-md navbar-light bg-color shadow-sm">
+            <div
+                style="margin-left: 300px; left: 0; bottom: 0; width: 100%; color: #e24ab4; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 1;">
+                <p style="color: black; margin: 0;">
+                    Este site utiliza recursos do <a href="https://www.gov.br" target="_blank"
+                        style="cursor: pointer; color: white;">https://www.gov.br/</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<div style="position: fixed; left: 0; bottom: 0; width: 100%; color: white; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 2;">
-    <div class="flex items-center gap-4">
-        <a href="https://github.com/Danpam12/doe_leite" style="margin-right: 800px; color: white; display: inline-flex; align-items: center; padding: 2px; " class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
-            DoeLeite
-        </a>
     </div>
-</div>
-    </footer>
+    <div
+        style="position: fixed; left: 0; bottom: 0; width: 100%; color: white; display: flex; justify-content: space-around; align-items: center; padding: 4px; text-align: center; z-index: 2;">
+        <div class="flex items-center gap-4">
+            <a href="https://github.com/Danpam12/doe_leite"
+                style="margin-right: 800px; color: white; display: inline-flex; align-items: center; padding: 2px; "
+                class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500; color: black">
+                DoeLeite
+            </a>
+        </div>
+    </div>
+</footer>
+
 </html>

@@ -15,7 +15,7 @@
                     <a href="{{ route('cad_doadoras.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body bg-pink-200">
+            <div class="card-body bg-white">
                 
                 <div class="row">
                     <label for="nome" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Nome:</strong></label>

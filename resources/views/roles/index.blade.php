@@ -29,18 +29,18 @@
 
                             <div class="btn-group" role="group">
                                 @can('show-role')
-                                <a href="{{ route('roles.show', $role->id) }}" class="btn btn-warning btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
+                                <a href="{{ route('roles.show', $role->id) }}" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
                                 @endcan
                                 @if ($role->name != 'Super Admin')
                                     @can('edit-role')
-                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
+                                        <a href="{{ route('roles.edit', $role->id) }}" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                     @endcan
                                     @can('delete-role')
                                         @if ($role->name != Auth::user()->hasRole($role->name))
                                             <form action="{{ route('roles.destroy', $role->id) }}" method="post" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-xl rounded-xl p-1 m-1" onclick="return confirm('Do you want to delete this role?');"><i class="bi bi-trash"></i> Excluir</button>
+                                                <button type="submit" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1" onclick="return confirm('Do you want to delete this role?');"><i class="bi bi-trash"></i> Excluir</button>
                                             </form>
                                         @endif
                                     @endcan

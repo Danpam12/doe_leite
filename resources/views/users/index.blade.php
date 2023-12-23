@@ -39,20 +39,20 @@
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
+                            <a href="{{ route('users.show', $user->id) }}" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
 
                             @if (in_array('Super Admin', $user->getRoleNames()->toArray() ?? []) )
                                 @if (Auth::user()->hasRole('Super Admin'))
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endif
                             @else
                                 @can('edit-user')
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endcan
 
                                 @can('delete-user')
                                     @if (Auth::user()->id!=$user->id)
-                                        <button type="submit" class="btn btn-danger btn-xl rounded-xl p-1 m-1" onclick="return confirm('Está certo que quer deletar o Usuário?');"><i class="bi bi-trash rounded-xl"></i> Excluir</button>
+                                        <button type="submit" class="btn bg-pink-400 btn-xl rounded-xl p-1 m-1" onclick="return confirm('Está certo que quer deletar o Usuário?');"><i class="bi bi-trash rounded-xl"></i> Excluir</button>
                                     @endif
                                 @endcan
                             @endif
