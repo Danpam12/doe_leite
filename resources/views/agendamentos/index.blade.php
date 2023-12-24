@@ -60,7 +60,7 @@
                                 <td>{{ $agendamento->email }}</td>
                                 <td>{{ $agendamento->endereco }}</td>-->
                                 @can('create-role')
-                                    <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ <p>{{ $agendamento->quantidade}} ml</p></td>
+                                    <td class="border border-slate-700 rounded-xl"style="color: #e24ab4"> <p>{{ $agendamento->quantidade}} ml </p> </td>
                                 @endcan
                                 <td class="border border-slate-700 rounded-xl"style="color: #e24ab4">{{ $agendamento->status}}</td>
                                 <td>
@@ -68,14 +68,14 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <a href="{{ route('agendamentos.show', $agendamento->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Mostrar</a>
+                                        <a href="{{ route('agendamentos.show', $agendamento->id) }}" class="btn bg-pink-300 btn-sm rounded-xl"><i class="bi bi-eye"></i> Mostrar</a>
 
                                         @can('edit-agendamento')
-                                            <a href="{{ route('agendamentos.edit', $agendamento->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
+                                            <a href="{{ route('agendamentos.edit', $agendamento->id) }}" class="btn bg-pink-300 btn-sm rounded-xl"><i class="bi bi-pencil-square"></i> Editar</a>
                                         @endcan
 
                                         @can('delete-agendamento')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Deseja excluir este agendamento?');"><i class="bi bi-trash"></i> Excluir</button>
+                                            <button type="submit" class="btn bg-pink-300 btn-sm rounded-xl" onclick="return confirm('Deseja excluir este agendamento?');"><i class="bi bi-trash"></i> Excluir</button>
                                         @endcan
                                     </form>
                                 </td>

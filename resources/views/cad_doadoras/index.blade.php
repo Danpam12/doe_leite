@@ -60,14 +60,14 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <a href="{{ route('cad_doadoras.show', $cad_doadora->id) }}" class="btn btn-warning btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
+                                <a href="{{ route('cad_doadoras.show', $cad_doadora->id) }}" class="btn bg-pink-300 btn-xl rounded-xl p-1 m-1"><i class="bi bi-eye"></i> Mostrar</a>
 
                                 @can('edit-cad-doadora')
-                                    <a href="{{ route('cad_doadoras.edit', $cad_doadora->id) }}" class="btn btn-primary btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
+                                    <a href="{{ route('cad_doadoras.edit', $cad_doadora->id) }}" class="btn bg-pink-300 btn-xl rounded-xl p-1 m-1"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endcan
 
                                 @can('delete-cad-doadora')
-                                    <button type="submit" class="btn btn-danger btn-xl rounded-xl p-1 m-1" onclick="return confirm('Deseja excluir esta doadora?');"><i class="bi bi-trash"></i> Excluir</button>
+                                    <button type="submit" class="btn bg-pink-300 btn-xl rounded-xl p-1 m-1" onclick="return confirm('Deseja excluir esta doadora?');"><i class="bi bi-trash"></i> Excluir</button>
                                 @endcan
                             </form>
                         </td>

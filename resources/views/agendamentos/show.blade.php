@@ -15,7 +15,7 @@
                     <a href="{{ route('agendamentos.index') }}" class="btn btn-primary btn-sm" style="background-color: white; color: black">&larr; Voltar</a>
                 </div>
             </div>
-            <div class="card-body bg-pink-200">
+            <div class="card-body bg-white">
 
                 <div class="row">
                     <label for="ponto_coleta" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Ponto de Coleta:</strong></label>
@@ -83,7 +83,7 @@
                 <div class="row">
                     <label for="quantidade" class="col-md-4 col-form-label text-md-end text-start"style="color: #e24ab4"><strong>Quantidade:</strong></label>
                     <div class="col-md-6" style="line-height: 35px;color: #e24ab4">
-                        {{ $agendamento->quantidade }} <strong>ml</strong>
+                        <p> {{ $agendamento->quantidade }} ml</p>
                     </div>
                 </div>
 

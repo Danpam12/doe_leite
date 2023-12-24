@@ -31,7 +31,7 @@ class UpdateAgendamentoRequest extends FormRequest
             'telefone' => 'required|string',
             'email' => 'required|email',
             'endereco' => 'required|string',
-            'quantidade' => 'integer|min:1|between:1,10000',    
+            'quantidade' => '',    
             'status' => 'required|in:Pendente,Aceito,Cancelado,Concluido',
         ];
     }
